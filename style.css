@@ -7,8 +7,6 @@
 @font-face {
     font-family: 'Gilroy';
     src: url('./Gilroy-Light.otf');
-    font-style: normal;
-    font-weight: normal;
 }
 
 body {
@@ -27,6 +25,15 @@ body {
     width: 40%;
     height: 100vh;
     background-color: rebeccapurple;
+}
+
+.left .heading {
+    margin-top: 120px;
+    width: 40%;
+}
+
+.heading h1 {
+    font-size: 55px;
 }
 
 .right {
