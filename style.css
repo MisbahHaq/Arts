@@ -53,7 +53,7 @@ body {
   background-color: red;
   color: black;
   padding: 40px;
-  position: relative; /* required for absolute positioning inside */
+  position: relative; 
 }
 
 .top-bar {
