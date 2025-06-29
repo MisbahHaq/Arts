@@ -12,10 +12,29 @@
 }
 
 body {
-    background-color: black;
+   
     font-family: Gilroy;
 }
 
 .hero {
-    color: whitesmoke;
+    display: flex;
+}
+
+.left {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 40%;
+    height: 100vh;
+    background-color: rebeccapurple;
+}
+
+.right {
+    width: 60%;
+    height: 100vh;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    color: rgb(0, 0, 0);
+    background-color: red;
 }
