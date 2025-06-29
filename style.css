@@ -3,3 +3,19 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./Gilroy-Light.otf');
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    background-color: black;
+    font-family: Gilroy;
+}
+
+.hero {
+    color: whitesmoke;
+}
