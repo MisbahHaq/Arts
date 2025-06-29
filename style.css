@@ -91,7 +91,7 @@ body, html {
 
 .alphabet-filter button {
   background: transparent;
-  border: 1px solid #555;
+  border: none;
   color: white;
   padding: 5px 10px;
   cursor: pointer;
