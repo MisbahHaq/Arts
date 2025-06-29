@@ -46,26 +46,16 @@
             </div>
 
             <section class="gallery">
-                <img class="item" src="./Images/1.jpg" alt="Artwork 1" />
-                <img class="item" src="./Images/2.webp" alt="Artwork 2" />
-                <img class="item" src="./Images/3.png" alt="Artwork 3" />
-                <img class="item" src="./Images/4.webp" alt="Artwork 4" />
-                <div class="item big">
-                    <img src="./Images/5.jpg" alt="Artwork 5" />
-                </div>
-                <img class="item" src="./Images/6.webp" alt="Artwork 6" />
-                <img class="item" src="./Images/7.jpg" alt="Artwork 7" />
-                <img class="item" src="./Images/8.jpg" alt="Artwork 8" />
-                <img class="item" src="./Images/9.webp" alt="Artwork 9" />
-                <img class="item" src="./Images/10.jpg" alt="Artwork 10" />
-                <img class="item" src="./Images/11.webp" alt="Artwork 11" />
-                <img class="item" src="./Images/12.jpg" alt="Artwork 12" />
-                <img class="item" src="./Images/13.jpg" alt="Artwork 13" />
-                <img class="item" src="./Images/14.webp" alt="Artwork 14" />
-                <img class="item" src="./Images/15.webp" alt="Artwork 15" />
-                <img class="item" src="./Images/16.jpg" alt="Artwork 16" />
+  <div class="item"><img src="./Images/1.jpg" alt="Artwork 1" /></div>
+  <div class="item"><img src="./Images/2.webp" alt="Artwork 2" /></div>
+  <div class="item"><img src="./Images/3.png" alt="Artwork 3" /></div>
+  <div class="item"><img src="./Images/4.webp" alt="Artwork 4" /></div>
+  <div class="item big"><img src="./Images/5.jpg" alt="Artwork 5" /></div> <br>
+  <div class="item"><img src="./Images/6.webp" alt="Artwork 6" /></div>
+  <div class="item"><img src="./Images/7.jpg" alt="Artwork 7" /></div>
+  <div class="item"><img src="./Images/8.jpg" alt="Artwork 8" /></div>
+</section>
 
-            </section>
         </main>
     </div>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
@@ -80,6 +70,16 @@
             });
         });
     </script>
+    <script>window.addEventListener('load', () => {
+  const grid = document.querySelector('.gallery');
+  new Masonry(grid, {
+    itemSelector: '.item',
+    columnWidth: 150,
+    gutter: 20,
+    fitWidth: true
+  });
+});
+</script>
 
 </body>
 

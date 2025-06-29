@@ -122,3 +122,14 @@ body, html {
   align-items: center;
   justify-content: center;
 }
+
+.item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.item.big img {
+  width: 450px;
+  height: 450px;
+}
