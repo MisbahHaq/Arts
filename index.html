@@ -110,7 +110,8 @@
         font-size: 12px;
     }
 
-    .alphabet-filter button:hover {
+    .alphabet-filter button:hover,
+    .alphabet-filter button.active {
         background-color: #333;
     }
 
@@ -127,6 +128,11 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        transition: opacity 0.3s ease;
+    }
+
+    .item.hidden {
+        display: none;
     }
 
     .item.corner {
@@ -145,6 +151,12 @@
         width: 100%;
         height: calc(100% - 30px);
         object-fit: contain;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+    }
+
+    .item:hover img {
+        filter: grayscale(0%);
     }
 
     .item-title {
@@ -184,75 +196,83 @@
             </nav>
 
             <div class="alphabet-filter">
-                <button>ALL</button>
+                <button class="filter-btn active" data-filter="all">ALL</button>
                 <script>
                     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                    document.write([...letters].map(l => `<button>${l}</button>`).join(''));
+                    const alphabetFilter = document.querySelector('.alphabet-filter');
+                    
+                    letters.split('').forEach(letter => {
+                        const button = document.createElement('button');
+                        button.className = 'filter-btn';
+                        button.textContent = letter;
+                        button.setAttribute('data-filter', letter);
+                        alphabetFilter.appendChild(button);
+                    });
                 </script>
             </div>
 
             <section class="gallery">
-                <div class="item corner">
+                <div class="item corner" data-artist="A">
                     <img src="./Images/1.jpg" alt="Artwork 1" />
                     <div class="item-title">Artwork 1</div>
                 </div>
-                <div class="item tall">
+                <div class="item tall" data-artist="B">
                     <img src="./Images/2.webp" alt="Artwork 2" />
                     <div class="item-title">Artwork 2</div>
                 </div>
-                <div class="item short">
+                <div class="item short" data-artist="C">
                     <img src="./Images/3.png" alt="Artwork 3" />
                     <div class="item-title">Artwork 3</div>
                 </div>
-                <div class="item corner">
+                <div class="item corner" data-artist="D">
                     <img src="./Images/4.webp" alt="Artwork 4" />
                     <div class="item-title">Artwork 4</div>
                 </div>
-                <div class="item">
+                <div class="item" data-artist="E">
                     <img src="./Images/5.jpg" alt="Artwork 5" />
                     <div class="item-title">Artwork 5</div>
                 </div>
-                <div class="item tall">
+                <div class="item tall" data-artist="F">
                     <img src="./Images/6.webp" alt="Artwork 6" />
                     <div class="item-title">Artwork 6</div>
                 </div>
-                <div class="item short">
+                <div class="item short" data-artist="G">
                     <img src="./Images/7.jpg" alt="Artwork 7" />
                     <div class="item-title">Artwork 7</div>
                 </div>
-                <div class="item">
+                <div class="item" data-artist="H">
                     <img src="./Images/8.jpg" alt="Artwork 8" />
                     <div class="item-title">Artwork 8</div>
                 </div>
-                <div class="item tall">
+                <div class="item tall" data-artist="I">
                     <img src="./Images/9.webp" alt="Artwork 9" />
                     <div class="item-title">Artwork 9</div>
                 </div>
-                <div class="item short">
+                <div class="item short" data-artist="J">
                     <img src="./Images/10.jpg" alt="Artwork 10" />
                     <div class="item-title">Artwork 10</div>
                 </div>
-                <div class="item">
+                <div class="item" data-artist="K">
                     <img src="./Images/11.webp" alt="Artwork 11" />
                     <div class="item-title">Artwork 11</div>
                 </div>
-                <div class="item tall">
+                <div class="item tall" data-artist="L">
                     <img src="./Images/12.jpg" alt="Artwork 12" />
                     <div class="item-title">Artwork 12</div>
                 </div>
-                <div class="item short">
+                <div class="item short" data-artist="M">
                     <img src="./Images/13.jpg" alt="Artwork 13" />
                     <div class="item-title">Artwork 13</div>
                 </div>
-                <div class="item">
+                <div class="item" data-artist="N">
                     <img src="./Images/14.webp" alt="Artwork 14" />
                     <div class="item-title">Artwork 14</div>
                 </div>
-                <div class="item tall">
+                <div class="item tall" data-artist="O">
                     <img src="./Images/15.webp" alt="Artwork 15" />
                     <div class="item-title">Artwork 15</div>
                 </div>
-                <div class="item corner">
+                <div class="item corner" data-artist="P">
                     <img src="./Images/16.jpg" alt="Artwork 16" />
                     <div class="item-title">Artwork 16</div>
                 </div>
@@ -261,6 +281,26 @@
         </main>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-artist').startsWith(filter)) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
