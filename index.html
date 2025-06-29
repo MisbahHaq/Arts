@@ -1,72 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Masters</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Masters</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <div class="container">
-    <aside class="sidebar">
-      <div class="logo">ONE DAY YOU</div>
-      <h1><span class="light">THE</span> <span class="bold">MASTERS</span><br>IN ALL SORTS OF ART</h1>
-      <ul class="filters">
-        <li>● PAINTER</li>
-        <li>● PHOTOGRAPHER</li>
-        <li>● STYLIST</li>
-      </ul>
-      <div class="footer">
-        <p>UNMAPPED</p>
-        <p>PLAYLIST</p>
-        <p>DATABASE</p>
-        <p>CONTACT</p>
-      </div>
-    </aside>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">ONE DAY YOU</div>
+            <h1><span class="light">THE</span> <span class="bold">MASTERS</span><br>IN ALL SORTS OF ART</h1>
+            <ul class="filters">
+                <li>● PAINTER</li>
+                <li>● PHOTOGRAPHER</li>
+                <li>● STYLIST</li>
+            </ul>
+            <div class="footer">
+                <p>UNMAPPED</p>
+                <p>PLAYLIST</p>
+                <p>DATABASE</p>
+                <p>CONTACT</p>
+            </div>
+        </aside>
 
-    <main class="content">
-      <nav class="top-nav">
-        <p>ABOUT US</p>
-        <div class="nav-links">
-          <p>MARKET</p>
-          <p>GALLERY</p>
-          <p>ARTISTS</p>
-        </div>
-      </nav>
+        <main class="content">
+            <nav class="top-nav">
+                <p>ABOUT US</p>
+                <div class="nav-links">
+                    <p>MARKET</p>
+                    <p>GALLERY</p>
+                    <p>ARTISTS</p>
+                </div>
+            </nav>
 
-      <div class="alphabet-filter">
-        <button>ALL</button>
-        <script>
-          const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-          document.write([...letters].map(l => `<button>${l}</button>`).join(''));
-        </script>
-      </div>
+            <div class="alphabet-filter">
+                <button>ALL</button>
+                <script>
+                    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                    document.write([...letters].map(l => `<button>${l}</button>`).join(''));
+                </script>
+            </div>
 
-      <section class="gallery">
-        <img class="item" src="./Images/1.jpg" alt="Artwork 1" />
-        <img class="item" src="./Images/2.webp" alt="Artwork 2" />
-        <img class="item" src="./Images/3.png" alt="Artwork 3" />
-        <img class="item" src="./Images/4.webp" alt="Artwork 4" />
-        <img class="item" src="https://picsum.photos/300/420" alt="Artwork 5" />
-        <img class="item" src="https://picsum.photos/300/300" alt="Artwork 6" />
-        <img class="item" src="https://picsum.photos/300/600" alt="Artwork 7" />
-        <img class="item" src="https://picsum.photos/300/320" alt="Artwork 8" />
-      </section>
-    </main>
-  </div>
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<script>
-  window.addEventListener('load', () => {
-    const grid = document.querySelector('.gallery');
-    new Masonry(grid, {
-      itemSelector: '.item',
-      columnWidth: '.item',
-      percentPosition: true,
-      gutter: 20
-    });
-  });
-</script>
+            <section class="gallery">
+                <img class="item" src="./Images/1.jpg" alt="Artwork 1" />
+                <img class="item" src="./Images/2.webp" alt="Artwork 2" />
+                <img class="item" src="./Images/3.png" alt="Artwork 3" />
+                <img class="item" src="./Images/4.webp" alt="Artwork 4" />
+                <div class="item big">
+                    <img src="./Images/5.jpg" alt="Artwork 5" />
+                </div>
+                <img class="item" src="./Images/6.webp" alt="Artwork 6" />
+                <img class="item" src="./Images/7.jpg" alt="Artwork 7" />
+                <img class="item" src="./Images/8.webp" alt="Artwork 8" />
+                <img class="item" src="./Images/9.webp" alt="Artwork 8" />
+                <img class="item" src="./Images/10.jpg" alt="Artwork 8" />
+                <img class="item" src="./Images/11.webp" alt="Artwork 8" />
+                <img class="item" src="./Images/12.jpg" alt="Artwork 8" />
+                <img class="item" src="./Images/13.jpg" alt="Artwork 8" />
+            </section>
+        </main>
+    </div>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            const grid = document.querySelector('.gallery');
+            new Masonry(grid, {
+                itemSelector: '.item',
+                columnWidth: '.item',
+                percentPosition: true,
+                gutter: 20
+            });
+        });
+    </script>
 
 </body>
+
 </html>
