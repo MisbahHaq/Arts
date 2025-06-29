@@ -5,8 +5,146 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Masters</title>
-    <link rel="stylesheet" href="style.css" />
+
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body,
+    html {
+        height: 100%;
+        font-family: 'Gilroy';
+        background-color: #0a0a0a;
+        color: white;
+    }
+
+    @font-face {
+        font-family: 'Gilroy';
+        src: url('./Gilroy-Light.otf');
+        font-style: normal;
+        font-weight: normal;
+    }
+
+    @font-face {
+        font-family: 'Gilroy Bold';
+        src: url('./Gilroy-ExtraBold.otf');
+    }
+
+    .container {
+        display: flex;
+        height: 100vh;
+    }
+
+    .sidebar {
+        width: 30%;
+        background-color: #0a0a0a;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .sidebar h1 {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+
+    .sidebar .light {
+        font-weight: 300;
+    }
+
+    .sidebar .bold {
+        font-family: 'Gilroy Bold';
+    }
+
+    .sidebar .filters {
+        list-style: none;
+        margin-top: 40px;
+    }
+
+    .sidebar .filters li {
+        margin-bottom: 10px;
+    }
+
+    .sidebar .footer p {
+        margin-top: 20px;
+        font-size: 12px;
+    }
+
+    .content {
+        width: 70%;
+        background-color: #111;
+        padding: 40px;
+        position: relative;
+    }
+
+    .top-nav {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 40px;
+    }
+
+    .alphabet-filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-bottom: 30px;
+        margin-top: 100px;
+    }
+
+    .alphabet-filter button {
+        background: transparent;
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 12px;
+    }
+
+    .alphabet-filter button:hover {
+        background-color: #333;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 20px;
+    }
+
+    .gallery img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .card {
+        background-color: #222;
+        height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .item img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .item.big img {
+        width: 450px;
+        height: 450px;
+    }
+</style>
 
 <body>
 
@@ -46,24 +184,24 @@
             </div>
 
             <section class="gallery">
-  <div class="item"><img src="./Images/1.jpg" alt="Artwork 1" /></div>
-  <div class="item"><img src="./Images/2.webp" alt="Artwork 2" /></div>
-  <div class="item"><img src="./Images/3.png" alt="Artwork 3" /></div>
-  <div class="item"><img src="./Images/4.webp" alt="Artwork 4" /></div>
-  <div class="item big"><img src="./Images/5.jpg" alt="Artwork 5" /></div> <br>
-  <div class="item"><img src="./Images/6.webp" alt="Artwork 6" /></div>
-  <div class="item"><img src="./Images/7.jpg" alt="Artwork 7" /></div>
-  <div class="item"><img src="./Images/8.jpg" alt="Artwork 8" /></div>
-   <div class="item big"><img src="./Images/9.webp" alt="Artwork 9" /></div> <br>
-  <div class="item"><img src="./Images/10.jpg" alt="Artwork 10" /></div>
-  <div class="item"><img src="./Images/11.webp" alt="Artwork 11" /></div>
-  <div class="item"><img src="./Images/12.jpg" alt="Artwork 12" /></div>
-  <div class="item"><img src="./Images/13.jpg" alt="Artwork 13" /></div>
-  <div class="item"><img src="./Images/14.webp" alt="Artwork 14" /></div>
-  <div class="item"><img src="./Images/15.webp" alt="Artwork 15" /></div>
-  <div class="item"><img src="./Images/16.jpg" alt="Artwork 16" /></div>
+                <div class="item"><img src="./Images/1.jpg" alt="Artwork 1" /></div>
+                <div class="item"><img src="./Images/2.webp" alt="Artwork 2" /></div>
+                <div class="item"><img src="./Images/3.png" alt="Artwork 3" /></div>
+                <div class="item"><img src="./Images/4.webp" alt="Artwork 4" /></div>
+                <div class="item big"><img src="./Images/5.jpg" alt="Artwork 5" /></div> <br>
+                <div class="item"><img src="./Images/6.webp" alt="Artwork 6" /></div>
+                <div class="item"><img src="./Images/7.jpg" alt="Artwork 7" /></div>
+                <div class="item"><img src="./Images/8.jpg" alt="Artwork 8" /></div>
+                <div class="item big"><img src="./Images/9.webp" alt="Artwork 9" /></div> <br>
+                <div class="item"><img src="./Images/10.jpg" alt="Artwork 10" /></div>
+                <div class="item"><img src="./Images/11.webp" alt="Artwork 11" /></div>
+                <div class="item"><img src="./Images/12.jpg" alt="Artwork 12" /></div>
+                <div class="item"><img src="./Images/13.jpg" alt="Artwork 13" /></div>
+                <div class="item"><img src="./Images/14.webp" alt="Artwork 14" /></div>
+                <div class="item"><img src="./Images/15.webp" alt="Artwork 15" /></div>
+                <div class="item"><img src="./Images/16.jpg" alt="Artwork 16" /></div>
 
-</section>
+            </section>
 
         </main>
     </div>
@@ -80,15 +218,15 @@
         });
     </script>
     <script>window.addEventListener('load', () => {
-  const grid = document.querySelector('.gallery');
-  new Masonry(grid, {
-    itemSelector: '.item',
-    columnWidth: 250,
-    gutter: 40,
-    fitWidth: true
-  });
-});
-</script>
+            const grid = document.querySelector('.gallery');
+            new Masonry(grid, {
+                itemSelector: '.item',
+                columnWidth: 250,
+                gutter: 40,
+                fitWidth: true
+            });
+        });
+    </script>
 
 </body>
 
