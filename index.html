@@ -1,40 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Master of Arts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Masters</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <div class="hero">
-  <div class="left">
-    <div class="nav">
-      <div class="top-bar">
-        <p>Misbah</p>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">ONE DAY YOU</div>
+      <h1><span class="light">THE</span> <span class="bold">MASTERS</span><br>IN ALL SORTS OF ART</h1>
+      <ul class="filters">
+        <li>● PAINTER</li>
+        <li>● PHOTOGRAPHER</li>
+        <li>● STYLIST</li>
+      </ul>
+      <div class="footer">
+        <p>UNMAPPED</p>
+        <p>PLAYLIST</p>
+        <p>DATABASE</p>
+        <p>CONTACT</p>
       </div>
-    </div>
-    <div class="heading">
-      <h1><span class="normal">The</span> <span class="bold">Masters</span><br>in all Sorts of Art</h1>
-    </div>
+    </aside>
+
+    <main class="content">
+      <nav class="top-nav">
+        <p>ABOUT US</p>
+        <div class="nav-links">
+          <p>MARKET</p>
+          <p>GALLERY</p>
+          <p>ARTISTS</p>
+        </div>
+      </nav>
+
+      <div class="alphabet-filter">
+        <button>ALL</button>
+        <!-- JS can auto-generate A-Z -->
+        <script>
+          const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+          document.write([...letters].map(l => `<button>${l}</button>`).join(''));
+        </script>
+      </div>
+
+      <section class="gallery">
+        <!-- Dummy Items -->
+        <div class="card">ART</div>
+        <div class="card">WORK</div>
+        <div class="card">IMAGE</div>
+        <div class="card">NAME</div>
+      </section>
+    </main>
   </div>
 
-  <div class="right">
-    <div class="nav">
-      <div class="top-bar">
-        <p>About</p>
-      </div>
-      <div class="right-bar">
-        <p>Market</p>
-        <p>Gallery</p>
-        <p>Artist</p>
-      </div>
-    </div>
-  </div>
-</div>
-  <script src="script.js"></script>
 </body>
-
 </html>

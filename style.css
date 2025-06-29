@@ -1,71 +1,105 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'Gilroy';
-  src: url('./Gilroy-Light.otf');
+body, html {
+  height: 100%;
+  font-family: 'Gilroy', sans-serif;
+  background-color: #0a0a0a;
+  color: white;
 }
 
-@font-face {
-  font-family: 'Gilroy Bold';
-  src: url('./Gilroy-ExtraBold.otf');
-}
-
-body {
-  font-family: Gilroy;
-}
-
-.hero {
+.container {
   display: flex;
+  height: 100vh;
 }
 
-.left {
+.sidebar {
+  width: 30%;
+  background-color: #0a0a0a;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 40%;
-  height: 100vh;
-  background-color: rebeccapurple;
-  color: white;
-  padding: 40px;
+  justify-content: space-between;
 }
 
-.left .heading {
-  margin-top: 80px;
-  width: 100%;
+.sidebar h1 {
+  font-size: 32px;
+  line-height: 1.3;
 }
 
-.heading h1 {
-  font-size: 50px;
-  line-height: 1.2;
+.sidebar .light {
+  font-weight: 300;
 }
 
-.heading .bold {
+.sidebar .bold {
   font-family: 'Gilroy Bold';
 }
 
-.right {
-  width: 60%;
-  height: 100vh;
-  background-color: red;
-  color: black;
-  padding: 40px;
-  position: relative; 
+.sidebar .filters {
+  list-style: none;
+  margin-top: 40px;
 }
 
-.top-bar {
+.sidebar .filters li {
+  margin-bottom: 10px;
+}
+
+.sidebar .footer p {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.content {
+  width: 70%;
+  background-color: #111;
+  padding: 40px;
+  position: relative;
+}
+
+.top-nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  margin-bottom: 20px;
 }
 
-.right-bar {
-  position: absolute;
-  top: 40px;
-  right: 40px;
+.nav-links {
   display: flex;
-  gap: 50px;
+  gap: 40px;
+}
+
+.alphabet-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.alphabet-filter button {
+  background: transparent;
+  border: 1px solid #555;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.alphabet-filter button:hover {
+  background-color: #333;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #222;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
