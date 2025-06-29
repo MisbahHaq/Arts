@@ -125,6 +125,8 @@
         width: 100%;
         height: 250px;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
     }
 
     .item.corner {
@@ -141,8 +143,14 @@
 
     .item img {
         width: 100%;
-        height: 100%;
+        height: calc(100% - 30px);
         object-fit: contain;
+    }
+
+    .item-title {
+        font-size: 12px;
+        margin-top: 10px;
+        text-align: center;
     }
 </style>
 
@@ -184,22 +192,70 @@
             </div>
 
             <section class="gallery">
-                <div class="item corner"><img src="./Images/1.jpg" alt="Artwork 1" /></div>
-                <div class="item tall"><img src="./Images/2.webp" alt="Artwork 2" /></div>
-                <div class="item short"><img src="./Images/3.png" alt="Artwork 3" /></div>
-                <div class="item corner"><img src="./Images/4.webp" alt="Artwork 4" /></div>
-                <div class="item"><img src="./Images/5.jpg" alt="Artwork 5" /></div>
-                <div class="item tall"><img src="./Images/6.webp" alt="Artwork 6" /></div>
-                <div class="item short"><img src="./Images/7.jpg" alt="Artwork 7" /></div>
-                <div class="item"><img src="./Images/8.jpg" alt="Artwork 8" /></div>
-                <div class="item tall"><img src="./Images/9.webp" alt="Artwork 9" /></div>
-                <div class="item short"><img src="./Images/10.jpg" alt="Artwork 10" /></div>
-                <div class="item"><img src="./Images/11.webp" alt="Artwork 11" /></div>
-                <div class="item tall"><img src="./Images/12.jpg" alt="Artwork 12" /></div>
-                <div class="item short"><img src="./Images/13.jpg" alt="Artwork 13" /></div>
-                <div class="item"><img src="./Images/14.webp" alt="Artwork 14" /></div>
-                <div class="item tall"><img src="./Images/15.webp" alt="Artwork 15" /></div>
-                <div class="item corner"><img src="./Images/16.jpg" alt="Artwork 16" /></div>
+                <div class="item corner">
+                    <img src="./Images/1.jpg" alt="Artwork 1" />
+                    <div class="item-title">Artwork 1</div>
+                </div>
+                <div class="item tall">
+                    <img src="./Images/2.webp" alt="Artwork 2" />
+                    <div class="item-title">Artwork 2</div>
+                </div>
+                <div class="item short">
+                    <img src="./Images/3.png" alt="Artwork 3" />
+                    <div class="item-title">Artwork 3</div>
+                </div>
+                <div class="item corner">
+                    <img src="./Images/4.webp" alt="Artwork 4" />
+                    <div class="item-title">Artwork 4</div>
+                </div>
+                <div class="item">
+                    <img src="./Images/5.jpg" alt="Artwork 5" />
+                    <div class="item-title">Artwork 5</div>
+                </div>
+                <div class="item tall">
+                    <img src="./Images/6.webp" alt="Artwork 6" />
+                    <div class="item-title">Artwork 6</div>
+                </div>
+                <div class="item short">
+                    <img src="./Images/7.jpg" alt="Artwork 7" />
+                    <div class="item-title">Artwork 7</div>
+                </div>
+                <div class="item">
+                    <img src="./Images/8.jpg" alt="Artwork 8" />
+                    <div class="item-title">Artwork 8</div>
+                </div>
+                <div class="item tall">
+                    <img src="./Images/9.webp" alt="Artwork 9" />
+                    <div class="item-title">Artwork 9</div>
+                </div>
+                <div class="item short">
+                    <img src="./Images/10.jpg" alt="Artwork 10" />
+                    <div class="item-title">Artwork 10</div>
+                </div>
+                <div class="item">
+                    <img src="./Images/11.webp" alt="Artwork 11" />
+                    <div class="item-title">Artwork 11</div>
+                </div>
+                <div class="item tall">
+                    <img src="./Images/12.jpg" alt="Artwork 12" />
+                    <div class="item-title">Artwork 12</div>
+                </div>
+                <div class="item short">
+                    <img src="./Images/13.jpg" alt="Artwork 13" />
+                    <div class="item-title">Artwork 13</div>
+                </div>
+                <div class="item">
+                    <img src="./Images/14.webp" alt="Artwork 14" />
+                    <div class="item-title">Artwork 14</div>
+                </div>
+                <div class="item tall">
+                    <img src="./Images/15.webp" alt="Artwork 15" />
+                    <div class="item-title">Artwork 15</div>
+                </div>
+                <div class="item corner">
+                    <img src="./Images/16.jpg" alt="Artwork 16" />
+                    <div class="item-title">Artwork 16</div>
+                </div>
             </section>
 
         </main>
