@@ -1,47 +1,71 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
-    font-family: 'Gilroy';
-    src: url('./Gilroy-Light.otf');
+  font-family: 'Gilroy';
+  src: url('./Gilroy-Light.otf');
+}
+
+@font-face {
+  font-family: 'Gilroy Bold';
+  src: url('./Gilroy-ExtraBold.otf');
 }
 
 body {
-   
-    font-family: Gilroy;
+  font-family: Gilroy;
 }
 
 .hero {
-    display: flex;
+  display: flex;
 }
 
 .left {
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    width: 40%;
-    height: 100vh;
-    background-color: rebeccapurple;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 40%;
+  height: 100vh;
+  background-color: rebeccapurple;
+  color: white;
+  padding: 40px;
 }
 
 .left .heading {
-    margin-top: 120px;
-    width: 40%;
+  margin-top: 80px;
+  width: 100%;
 }
 
 .heading h1 {
-    font-size: 55px;
+  font-size: 50px;
+  line-height: 1.2;
+}
+
+.heading .bold {
+  font-family: 'Gilroy Bold';
 }
 
 .right {
-    width: 60%;
-    height: 100vh;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    color: rgb(0, 0, 0);
-    background-color: red;
+  width: 60%;
+  height: 100vh;
+  background-color: red;
+  color: black;
+  padding: 40px;
+  position: relative; /* required for absolute positioning inside */
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right-bar {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  gap: 50px;
 }
