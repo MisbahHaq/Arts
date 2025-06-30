@@ -19,6 +19,23 @@
         color: white;
       }
 
+      /* Page transition overlay */
+      .page-transition {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0a0a0a;
+        z-index: 9999;
+        transform: translateY(100%);
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .page-transition.active {
+        transform: translateY(0);
+      }
+
       @font-face {
         font-family: "Gilroy";
         src: url("./Gilroy-Light.otf");
@@ -33,6 +50,12 @@
         display: flex;
         height: 100%;
         flex-direction: column;
+        opacity: 1;
+        transition: opacity 0.4s ease;
+      }
+
+      .container.fade-out {
+        opacity: 0;
       }
 
       .sidebar {
@@ -294,6 +317,9 @@
     </style>
   </head>
   <body>
+    <!-- Page transition overlay -->
+    <div class="page-transition"></div>
+
     <div class="container">
       <aside class="sidebar">
         <div class="logo">ONE DAY YOU</div>
@@ -446,6 +472,31 @@
           gridBtn.classList.remove("active");
           console.log("Switched to Slider view");
         });
+      });
+    </script>
+    <script>
+      const transitionEl = document.querySelector(".page-transition");
+
+      // Animate IN on page load
+      window.addEventListener("DOMContentLoaded", () => {
+        transitionEl.classList.remove("active"); // Slide up to reveal page
+      });
+
+      // Animate OUT on link clicks
+      document.querySelectorAll("a").forEach((anchor) => {
+        const href = anchor.getAttribute("href");
+
+        // Only animate if internal link (same site)
+        if (href && !href.startsWith("#") && !href.startsWith("http")) {
+          anchor.addEventListener("click", (e) => {
+            e.preventDefault();
+            transitionEl.classList.add("active"); // Slide down
+
+            setTimeout(() => {
+              window.location.href = href;
+            }, 600); // Wait for animation (match CSS duration)
+          });
+        }
       });
     </script>
   </body>
