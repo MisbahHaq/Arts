@@ -168,13 +168,21 @@
         height: 180px;
       }
 
+      /* --- IMAGE APPEAR TRANSITION --- */
       .item img {
         width: 100%;
         height: calc(100% - 30px);
         object-fit: contain;
         filter: grayscale(100%);
-        transition: all 0.3s ease;
-        transform: translateX(-10px);
+        transition: all 0.3s ease, opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(-10px) scale(1.05);
+        opacity: 0;
+      }
+
+      .item img.img-visible {
+        opacity: 1;
+        transform: translateX(0) scale(1);
       }
 
       .item:hover {
@@ -534,6 +542,24 @@
           gridBtn.classList.remove("active");
           console.log("Switched to Slider view");
         });
+
+        // --- IMAGE APPEAR TRANSITION ---
+        // Fade in all images with a staggered effect
+        const images = document.querySelectorAll(".gallery .item img");
+        images.forEach((img, idx) => {
+          // If already loaded (from cache), trigger transition immediately
+          if (img.complete) {
+            setTimeout(() => {
+              img.classList.add("img-visible");
+            }, 80 * idx);
+          } else {
+            img.addEventListener("load", () => {
+              setTimeout(() => {
+                img.classList.add("img-visible");
+              }, 80 * idx);
+            });
+          }
+        });
       });
     </script>
     <script>
@@ -613,6 +639,25 @@
           sliderBtn.classList.add("active");
           gridBtn.classList.remove("active");
           console.log("Switched to Slider view");
+        });
+
+        // --- IMAGE APPEAR TRANSITION (for shuffled images) ---
+        // After shuffle, fade in all images again (if not already visible)
+        const images = document.querySelectorAll(".gallery .item img");
+        images.forEach((img, idx) => {
+          if (!img.classList.contains("img-visible")) {
+            if (img.complete) {
+              setTimeout(() => {
+                img.classList.add("img-visible");
+              }, 80 * idx);
+            } else {
+              img.addEventListener("load", () => {
+                setTimeout(() => {
+                  img.classList.add("img-visible");
+                }, 80 * idx);
+              });
+            }
+          }
         });
       });
     </script>

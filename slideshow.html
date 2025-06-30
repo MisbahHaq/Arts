@@ -42,13 +42,34 @@
         top: 0;
         left: 0;
         object-fit: contain;
-        transition: opacity 0.5s ease-in-out;
+        transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         pointer-events: none;
+        transform: scale(0.98) translateY(20px);
+        will-change: opacity, transform;
       }
 
       .slide.active {
         opacity: 1;
         pointer-events: auto;
+        transform: scale(1) translateY(0);
+        z-index: 1;
+      }
+
+      .slide.fading-out {
+        opacity: 0;
+        transform: scale(0.98) translateY(20px);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .slide.appearing {
+        opacity: 1;
+        pointer-events: auto;
+        transform: scale(1) translateY(0);
+        z-index: 1;
+        transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
       .nav-button {
@@ -231,7 +252,7 @@
 
     <div class="slideshow-container">
       <!-- Slides -->
-      <img class="slide active" src="./Images/1.jpg" alt="Artwork 1" />
+      <img class="slide" src="./Images/1.jpg" alt="Artwork 1" />
       <img class="slide" src="./Images/2.webp" alt="Artwork 2" />
       <img class="slide" src="./Images/3.png" alt="Artwork 3" />
       <img class="slide" src="./Images/4.webp" alt="Artwork 4" />
@@ -296,9 +317,28 @@
 
       totalSlidesEl.textContent = slides.length;
 
+      // Helper to handle fade-out/fade-in transitions
       function updateSlide(index) {
         slides.forEach((slide, i) => {
-          slide.classList.toggle("active", i === index);
+          if (i === index) {
+            // Remove fading-out if present
+            slide.classList.remove("fading-out");
+            // Add active after a short delay for smooth transition if coming from fade-out
+            setTimeout(() => {
+              slide.classList.add("active");
+            }, 10);
+          } else {
+            if (slide.classList.contains("active")) {
+              slide.classList.add("fading-out");
+              slide.classList.remove("active");
+              // Remove fading-out after transition
+              setTimeout(() => {
+                slide.classList.remove("fading-out");
+              }, 500);
+            } else {
+              slide.classList.remove("active", "fading-out");
+            }
+          }
         });
         currentSlideEl.textContent = index + 1;
         slideTitleEl.textContent = slides[index].alt;
@@ -329,6 +369,19 @@
         let endX = e.changedTouches[0].clientX;
         if (startX - endX > 50) nextBtn.click();
         else if (endX - startX > 50) prevBtn.click();
+      });
+
+      // Appear transition for first image on load
+      window.addEventListener("DOMContentLoaded", () => {
+        slides.forEach((slide, i) => {
+          slide.classList.remove("active", "fading-out", "appearing");
+        });
+        // Add appearing class to first slide for transition
+        slides[0].classList.add("appearing");
+        setTimeout(() => {
+          slides[0].classList.remove("appearing");
+          slides[0].classList.add("active");
+        }, 700); // match transition duration in CSS
       });
     </script>
     <script>
