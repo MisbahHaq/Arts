@@ -1,306 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Masters</title>
-
-</head>
-<style>
+  </head>
+  <style>
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body,
     html {
-        height: 100%;
-        font-family: 'Gilroy';
-        background-color: #0a0a0a;
-        color: white;
+      height: 100%;
+      font-family: "Gilroy";
+      background-color: #0a0a0a;
+      color: white;
     }
 
     @font-face {
-        font-family: 'Gilroy';
-        src: url('./Gilroy-Light.otf');
-        font-style: normal;
-        font-weight: normal;
+      font-family: "Gilroy";
+      src: url("./Gilroy-Light.otf");
+      font-style: normal;
+      font-weight: normal;
     }
 
     @font-face {
-        font-family: 'Gilroy Bold';
-        src: url('./Gilroy-ExtraBold.otf');
+      font-family: "Gilroy Bold";
+      src: url("./Gilroy-ExtraBold.otf");
     }
 
     .container {
-        display: flex;
-        height: 100%;
+      display: flex;
+      height: 100%;
     }
 
     .sidebar {
-        width: 30%;
-        background-color: #0a0a0a;
-        padding: 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+      width: 30%;
+      background-color: #0a0a0a;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .sidebar h1 {
-        font-size: 32px;
-        line-height: 1.3;
+      font-size: 32px;
+      line-height: 1.3;
     }
 
     .sidebar .light {
-        font-weight: 300;
+      font-weight: 300;
     }
 
     .sidebar .bold {
-        font-family: 'Gilroy Bold';
+      font-family: "Gilroy Bold";
     }
 
     .sidebar .filters {
-        list-style: none;
-        margin-top: 40px;
+      list-style: none;
+      margin-top: 40px;
     }
 
     .sidebar .filters li {
-        margin-bottom: 10px;
+      margin-bottom: 10px;
     }
 
     .sidebar .footer p {
-        margin-top: 20px;
-        font-size: 12px;
+      margin-top: 20px;
+      font-size: 12px;
     }
 
     .content {
-        width: 70%;
-        background-color: #0a0a0a;
-        padding: 40px;
-        position: relative;
+      width: 70%;
+      background-color: #0a0a0a;
+      padding: 40px;
+      position: relative;
     }
 
     .top-nav {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
     }
 
     .nav-links {
-        display: flex;
-        gap: 40px;
+      display: flex;
+      gap: 40px;
     }
 
     .alphabet-filter {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 18px;
-        margin-bottom: 30px;
-        margin-top: 100px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 30px;
+      margin-top: 100px;
     }
 
     .alphabet-filter button {
-        background: transparent;
-        border: none;
-        color: white;
-        padding: 5px 10px;
-        cursor: pointer;
-        font-size: 12px;
+      background: transparent;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 12px;
     }
 
     .alphabet-filter button:hover,
     .alphabet-filter button.active {
-        background-color: #333;
+      background-color: #333;
     }
 
     .gallery {
-        display: grid;
-        grid-template-columns: 1fr 1.2fr 0.8fr 1fr;
-        gap: 20px;
-        max-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 0.8fr 1fr;
+      gap: 20px;
+      max-width: 100%;
     }
 
     .item {
-        width: 100%;
-        height: 250px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        transition: opacity 0.3s ease;
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: opacity 0.3s ease;
     }
 
     .item.hidden {
-        display: none;
+      display: none;
     }
 
     .item.corner {
-        height: 400px;
+      height: 400px;
     }
 
     .item.tall {
-        height: 350px;
+      height: 350px;
     }
 
     .item.short {
-        height: 200px;
+      height: 200px;
     }
 
     .item img {
-        width: 100%;
-        height: calc(100% - 30px);
-        object-fit: contain;
-        filter: grayscale(100%);
-        transition: filter 0.3s ease;
+      width: 100%;
+      height: calc(100% - 30px);
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
     }
 
     .item:hover img {
-        filter: grayscale(0%);
+      filter: grayscale(0%);
     }
 
     .item-title {
-        font-size: 12px;
-        margin-top: 10px;
-        text-align: center;
+      font-size: 12px;
+      margin-top: 10px;
+      text-align: center;
     }
-</style>
+  </style>
 
-<body>
-
+  <body>
     <div class="container">
-        <aside class="sidebar">
-            <div class="logo">ONE DAY YOU</div>
-            <h1><span class="light">THE</span> <span class="bold">MASTERS</span><br>IN ALL SORTS OF ART</h1>
-            <ul class="filters">
-                <li>● PAINTER</li>
-                <li>● PHOTOGRAPHER</li>
-                <li>● STYLIST</li>
-            </ul>
-            <div class="footer">
-                <p>UNMAPPED</p>
-                <p>PLAYLIST</p>
-                <p>DATABASE</p>
-                <p>CONTACT</p>
-            </div>
-        </aside>
+      <aside class="sidebar">
+        <div class="logo">ONE DAY YOU</div>
+        <h1>
+          <span class="light">THE</span> <span class="bold">MASTERS</span
+          ><br />IN ALL SORTS OF ART
+        </h1>
+        <ul class="filters">
+          <li>● PAINTER</li>
+          <li>● PHOTOGRAPHER</li>
+          <li>● STYLIST</li>
+        </ul>
+        <div class="footer">
+          <p>UNMAPPED</p>
+          <p>PLAYLIST</p>
+          <p>DATABASE</p>
+          <p>CONTACT</p>
+        </div>
+      </aside>
 
-        <main class="content">
-            <nav class="top-nav">
-                <p>ABOUT US</p>
-                <div class="nav-links">
-                    <p>MARKET</p>
-                    <p>GALLERY</p>
-                    <p>ARTISTS</p>
-                </div>
-            </nav>
+      <main class="content">
+        <nav class="top-nav">
+          <p>ABOUT US</p>
+          <div class="nav-links">
+            <p>MARKET</p>
+            <p>GALLERY</p>
+            <p>ARTISTS</p>
+          </div>
+        </nav>
 
-            <div class="alphabet-filter">
-                <button class="filter-btn active" data-filter="all">ALL</button>
-                <script>
-                    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                    const alphabetFilter = document.querySelector('.alphabet-filter');
-                    
-                    letters.split('').forEach(letter => {
-                        const button = document.createElement('button');
-                        button.className = 'filter-btn';
-                        button.textContent = letter;
-                        button.setAttribute('data-filter', letter);
-                        alphabetFilter.appendChild(button);
-                    });
-                </script>
-            </div>
+        <div class="alphabet-filter">
+          <button class="filter-btn active" data-filter="all">ALL</button>
+          <script>
+            const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const alphabetFilter = document.querySelector(".alphabet-filter");
 
-            <section class="gallery">
-                <div class="item corner" data-artist="A">
-                    <img src="./Images/1.jpg" alt="Artwork 1" />
-                    <div class="item-title">Artwork 1</div>
-                </div>
-                <div class="item tall" data-artist="B">
-                    <img src="./Images/2.webp" alt="Artwork 2" />
-                    <div class="item-title">Artwork 2</div>
-                </div>
-                <div class="item short" data-artist="C">
-                    <img src="./Images/3.png" alt="Artwork 3" />
-                    <div class="item-title">Artwork 3</div>
-                </div>
-                <div class="item corner" data-artist="D">
-                    <img src="./Images/4.webp" alt="Artwork 4" />
-                    <div class="item-title">Artwork 4</div>
-                </div>
-                <div class="item" data-artist="E">
-                    <img src="./Images/5.jpg" alt="Artwork 5" />
-                    <div class="item-title">Artwork 5</div>
-                </div>
-                <div class="item tall" data-artist="F">
-                    <img src="./Images/6.webp" alt="Artwork 6" />
-                    <div class="item-title">Artwork 6</div>
-                </div>
-                <div class="item short" data-artist="G">
-                    <img src="./Images/7.jpg" alt="Artwork 7" />
-                    <div class="item-title">Artwork 7</div>
-                </div>
-                <div class="item" data-artist="H">
-                    <img src="./Images/8.jpg" alt="Artwork 8" />
-                    <div class="item-title">Artwork 8</div>
-                </div>
-                <div class="item tall" data-artist="I">
-                    <img src="./Images/9.webp" alt="Artwork 9" />
-                    <div class="item-title">Artwork 9</div>
-                </div>
-                <div class="item short" data-artist="J">
-                    <img src="./Images/10.jpg" alt="Artwork 10" />
-                    <div class="item-title">Artwork 10</div>
-                </div>
-                <div class="item" data-artist="K">
-                    <img src="./Images/11.webp" alt="Artwork 11" />
-                    <div class="item-title">Artwork 11</div>
-                </div>
-                <div class="item tall" data-artist="L">
-                    <img src="./Images/12.jpg" alt="Artwork 12" />
-                    <div class="item-title">Artwork 12</div>
-                </div>
-                <div class="item short" data-artist="M">
-                    <img src="./Images/13.jpg" alt="Artwork 13" />
-                    <div class="item-title">Artwork 13</div>
-                </div>
-                <div class="item" data-artist="N">
-                    <img src="./Images/14.webp" alt="Artwork 14" />
-                    <div class="item-title">Artwork 14</div>
-                </div>
-                <div class="item tall" data-artist="O">
-                    <img src="./Images/15.webp" alt="Artwork 15" />
-                    <div class="item-title">Artwork 15</div>
-                </div>
-                <div class="item corner" data-artist="P">
-                    <img src="./Images/16.jpg" alt="Artwork 16" />
-                    <div class="item-title">Artwork 16</div>
-                </div>
-            </section>
+            letters.split("").forEach((letter) => {
+              const button = document.createElement("button");
+              button.className = "filter-btn";
+              button.textContent = letter;
+              button.setAttribute("data-filter", letter);
+              alphabetFilter.appendChild(button);
+            });
+          </script>
+        </div>
 
-        </main>
+        <section class="gallery">
+          <div class="item corner" data-artist="A">
+            <img src="./Images/1.jpg" alt="Artwork 1" />
+            <div class="item-title">Artwork 1</div>
+          </div>
+          <div class="item tall" data-artist="B">
+            <img src="./Images/2.webp" alt="Artwork 2" />
+            <div class="item-title">Artwork 2</div>
+          </div>
+          <div class="item short" data-artist="C">
+            <img src="./Images/3.png" alt="Artwork 3" />
+            <div class="item-title">Artwork 3</div>
+          </div>
+          <div class="item corner" data-artist="D">
+            <img src="./Images/4.webp" alt="Artwork 4" />
+            <div class="item-title">Artwork 4</div>
+          </div>
+          <div class="item" data-artist="E">
+            <img src="./Images/5.jpg" alt="Artwork 5" />
+            <div class="item-title">Artwork 5</div>
+          </div>
+          <div class="item tall" data-artist="F">
+            <img src="./Images/6.webp" alt="Artwork 6" />
+            <div class="item-title">Artwork 6</div>
+          </div>
+          <div class="item short" data-artist="G">
+            <img src="./Images/7.jpg" alt="Artwork 7" />
+            <div class="item-title">Artwork 7</div>
+          </div>
+          <div class="item" data-artist="H">
+            <img src="./Images/8.jpg" alt="Artwork 8" />
+            <div class="item-title">Artwork 8</div>
+          </div>
+          <div class="item tall" data-artist="I">
+            <img src="./Images/9.webp" alt="Artwork 9" />
+            <div class="item-title">Artwork 9</div>
+          </div>
+          <div class="item short" data-artist="J">
+            <img src="./Images/10.jpg" alt="Artwork 10" />
+            <div class="item-title">Artwork 10</div>
+          </div>
+          <div class="item" data-artist="K">
+            <img src="./Images/11.webp" alt="Artwork 11" />
+            <div class="item-title">Artwork 11</div>
+          </div>
+          <div class="item tall" data-artist="L">
+            <img src="./Images/12.jpg" alt="Artwork 12" />
+            <div class="item-title">Artwork 12</div>
+          </div>
+          <div class="item short" data-artist="M">
+            <img src="./Images/13.jpg" alt="Artwork 13" />
+            <div class="item-title">Artwork 13</div>
+          </div>
+          <div class="item" data-artist="N">
+            <img src="./Images/14.webp" alt="Artwork 14" />
+            <div class="item-title">Artwork 14</div>
+          </div>
+          <div class="item tall" data-artist="O">
+            <img src="./Images/15.webp" alt="Artwork 15" />
+            <div class="item-title">Artwork 15</div>
+          </div>
+          <div class="item corner" data-artist="P">
+            <img src="./Images/16.jpg" alt="Artwork 16" />
+            <div class="item-title">Artwork 16</div>
+          </div>
+        </section>
+      </main>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.item');
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const galleryItems = document.querySelectorAll(".item");
 
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const filter = this.getAttribute('data-filter');
-                    
-                    galleryItems.forEach(item => {
-                        if (filter === 'all' || item.getAttribute('data-artist').startsWith(filter)) {
-                            item.classList.remove('hidden');
-                        } else {
-                            item.classList.add('hidden');
-                        }
-                    });
-                });
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const filter = this.getAttribute("data-filter");
+
+            galleryItems.forEach((item) => {
+              if (
+                filter === "all" ||
+                item.getAttribute("data-artist").startsWith(filter)
+              ) {
+                item.classList.remove("hidden");
+              } else {
+                item.classList.add("hidden");
+              }
             });
+          });
         });
+      });
     </script>
-</body>
-
+  </body>
 </html>
