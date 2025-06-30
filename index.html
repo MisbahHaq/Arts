@@ -327,6 +327,16 @@
           overflow: hidden;
         }
       }
+
+      /* Hide sidebar texts in mobile mode */
+      @media (max-width: 767px) {
+        .sidebar .logo,
+        .sidebar h1,
+        .sidebar .filters,
+        .sidebar .footer {
+          display: none !important;
+        }
+      }
     </style>
   </head>
   <body>
