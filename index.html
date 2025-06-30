@@ -96,19 +96,6 @@
       flex: 1;
     }
 
-    .top-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
     .alphabet-filter {
       display: flex;
       flex-wrap: wrap;
@@ -148,6 +135,7 @@
       transition: all 0.3s ease;
       position: relative;
       z-index: 1;
+      cursor: pointer;
     }
 
     .item.hidden {
@@ -212,11 +200,6 @@
         order: 2;
       }
 
-      .top-nav {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
       .gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -268,10 +251,6 @@
       .content {
         width: 75%;
         padding: 40px;
-      }
-
-      .nav-links {
-        gap: 40px;
       }
 
       .alphabet-filter {
@@ -345,15 +324,6 @@
       </aside>
 
       <main class="content">
-        <nav class="top-nav">
-          <p>ABOUT US</p>
-          <div class="nav-links">
-            <p>MARKET</p>
-            <p>GALLERY</p>
-            <p>ARTISTS</p>
-          </div>
-        </nav>
-
         <div class="alphabet-filter">
           <button class="filter-btn active" data-filter="all">ALL</button>
           <script>
