@@ -138,7 +138,7 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 15px;
-        margin-left: -20px;
+        margin-left: 0;
       }
 
       .item {
@@ -151,6 +151,7 @@
         position: relative;
         z-index: 1;
         cursor: pointer;
+        transform-origin: center;
       }
 
       .item.hidden {
@@ -173,11 +174,12 @@
         object-fit: contain;
         filter: grayscale(100%);
         transition: all 0.3s ease;
+        transform: translateX(-10px);
       }
 
       .item:hover {
         z-index: 10;
-        transform: scale(1.1);
+        transform: scale(1.15);
       }
 
       .item:hover img {
@@ -241,7 +243,7 @@
         .gallery {
           grid-template-columns: repeat(2, 1fr);
           gap: 20px;
-          margin-left: -30px;
+          margin-left: -50px;
         }
         .item {
           height: 220px;
@@ -290,7 +292,7 @@
         .gallery {
           grid-template-columns: 1fr 1.2fr 0.8fr 1fr;
           gap: 20px;
-          margin-left: -40px;
+          margin-left: -60px;
         }
         .item.corner {
           height: 400px;
@@ -312,6 +314,9 @@
         }
         .sidebar {
           width: 30%;
+        }
+        .gallery-wrapper {
+          overflow: hidden;
         }
       }
     </style>
@@ -355,73 +360,74 @@
             });
           </script>
         </div>
-
-        <section class="gallery">
-          <div class="item corner" data-artist="A">
-            <img src="./Images/1.jpg" />
-            <div class="item-title">Artwork 1</div>
-          </div>
-          <div class="item tall" data-artist="B">
-            <img src="./Images/2.webp" />
-            <div class="item-title">Artwork 2</div>
-          </div>
-          <div class="item short" data-artist="C">
-            <img src="./Images/3.png" />
-            <div class="item-title">Artwork 3</div>
-          </div>
-          <div class="item corner" data-artist="D">
-            <img src="./Images/4.webp" />
-            <div class="item-title">Artwork 4</div>
-          </div>
-          <div class="item" data-artist="E">
-            <img src="./Images/5.jpg" />
-            <div class="item-title">Artwork 5</div>
-          </div>
-          <div class="item tall" data-artist="F">
-            <img src="./Images/6.webp" />
-            <div class="item-title">Artwork 6</div>
-          </div>
-          <div class="item short" data-artist="G">
-            <img src="./Images/7.jpg" />
-            <div class="item-title">Artwork 7</div>
-          </div>
-          <div class="item" data-artist="H">
-            <img src="./Images/8.jpg" />
-            <div class="item-title">Artwork 8</div>
-          </div>
-          <div class="item tall" data-artist="I">
-            <img src="./Images/9.webp" />
-            <div class="item-title">Artwork 9</div>
-          </div>
-          <div class="item short" data-artist="J">
-            <img src="./Images/10.jpg" />
-            <div class="item-title">Artwork 10</div>
-          </div>
-          <div class="item" data-artist="K">
-            <img src="./Images/11.webp" />
-            <div class="item-title">Artwork 11</div>
-          </div>
-          <div class="item tall" data-artist="L">
-            <img src="./Images/12.jpg" />
-            <div class="item-title">Artwork 12</div>
-          </div>
-          <div class="item short" data-artist="M">
-            <img src="./Images/13.jpg" />
-            <div class="item-title">Artwork 13</div>
-          </div>
-          <div class="item" data-artist="N">
-            <img src="./Images/14.webp" />
-            <div class="item-title">Artwork 14</div>
-          </div>
-          <div class="item tall" data-artist="O">
-            <img src="./Images/15.webp" />
-            <div class="item-title">Artwork 15</div>
-          </div>
-          <div class="item corner" data-artist="P">
-            <img src="./Images/16.jpg" />
-            <div class="item-title">Artwork 16</div>
-          </div>
-        </section>
+        <div class="gallery-wrapper">
+          <section class="gallery">
+            <div class="item corner" data-artist="A">
+              <img src="./Images/1.jpg" />
+              <div class="item-title">Artwork 1</div>
+            </div>
+            <div class="item tall" data-artist="B">
+              <img src="./Images/2.webp" />
+              <div class="item-title">Artwork 2</div>
+            </div>
+            <div class="item short" data-artist="C">
+              <img src="./Images/3.png" />
+              <div class="item-title">Artwork 3</div>
+            </div>
+            <div class="item corner" data-artist="D">
+              <img src="./Images/4.webp" />
+              <div class="item-title">Artwork 4</div>
+            </div>
+            <div class="item" data-artist="E">
+              <img src="./Images/5.jpg" />
+              <div class="item-title">Artwork 5</div>
+            </div>
+            <div class="item tall" data-artist="F">
+              <img src="./Images/6.webp" />
+              <div class="item-title">Artwork 6</div>
+            </div>
+            <div class="item short" data-artist="G">
+              <img src="./Images/7.jpg" />
+              <div class="item-title">Artwork 7</div>
+            </div>
+            <div class="item" data-artist="H">
+              <img src="./Images/8.jpg" />
+              <div class="item-title">Artwork 8</div>
+            </div>
+            <div class="item tall" data-artist="I">
+              <img src="./Images/9.webp" />
+              <div class="item-title">Artwork 9</div>
+            </div>
+            <div class="item short" data-artist="J">
+              <img src="./Images/10.jpg" />
+              <div class="item-title">Artwork 10</div>
+            </div>
+            <div class="item" data-artist="K">
+              <img src="./Images/11.webp" />
+              <div class="item-title">Artwork 11</div>
+            </div>
+            <div class="item tall" data-artist="L">
+              <img src="./Images/12.jpg" />
+              <div class="item-title">Artwork 12</div>
+            </div>
+            <div class="item short" data-artist="M">
+              <img src="./Images/13.jpg" />
+              <div class="item-title">Artwork 13</div>
+            </div>
+            <div class="item" data-artist="N">
+              <img src="./Images/14.webp" />
+              <div class="item-title">Artwork 14</div>
+            </div>
+            <div class="item tall" data-artist="O">
+              <img src="./Images/15.webp" />
+              <div class="item-title">Artwork 15</div>
+            </div>
+            <div class="item corner" data-artist="P">
+              <img src="./Images/16.jpg" />
+              <div class="item-title">Artwork 16</div>
+            </div>
+          </section>
+        </div>
       </main>
     </div>
 
