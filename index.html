@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Masters</title>
+    <title>Misbah Haque</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -18,93 +18,80 @@
           ><br />IN ALL SORTS OF ART
         </h1>
         <ul class="filters">
-          <li>● PAINTER</li>
-          <li>● PHOTOGRAPHER</li>
-          <li>● STYLIST</li>
+          <li>● DESIGNER</li>
+          <li>● DESIGNER</li>
+          <li>● DESIGNER</li>
         </ul>
         <div class="footer">
           <p>UNMAPPED</p>
           <p>PLAYLIST</p>
-          <p>DATABASE</p>
-          <p>CONTACT</p>
+          <p>INSTAGRAM</p>
+          <p>EMAIL</p>
         </div>
       </aside>
 
       <main class="content">
-        <div class="alphabet-filter">
-          <button class="filter-btn active" data-filter="all">ALL</button>
-          <script>
-            const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            const alphabetFilter = document.querySelector(".alphabet-filter");
-            letters.split("").forEach((letter) => {
-              const button = document.createElement("button");
-              button.className = "filter-btn";
-              button.textContent = letter;
-              button.setAttribute("data-filter", letter);
-              alphabetFilter.appendChild(button);
-            });
-          </script>
-        </div>
+        
         <div class="gallery-wrapper">
           <section class="gallery">
             <div class="item corner" data-artist="K">
-              <img src="./Images/1.png" loading="lazy" />
+              <img src="./CompressedImages/1.png" loading="lazy" />
               <div class="item-title">Artwork 1</div>
             </div>
             <div class="item tall" data-artist="M">
-              <img src="./Images/2.png" loading="lazy" />
+              <img src="./CompressedImages/2.png" loading="lazy" />
               <div class="item-title">Artwork 2</div>
             </div>
             <div class="item short" data-artist="D">
-              <img src="./Images/3.png" loading="lazy" />
+              <img src="./CompressedImages/3.png" loading="lazy" />
               <div class="item-title">Artwork 3</div>
             </div>
             <div class="item corner" data-artist="Q">
-              <img src="./Images/4.png" loading="lazy" />
+              <img src="./CompressedImages/4.png" loading="lazy" />
               <div class="item-title">Artwork 4</div>
             </div>
             <div class="item" data-artist="R">
-              <img src="./Images/5.png" loading="lazy" />
+              <img src="./CompressedImages/5.png" loading="lazy" />
               <div class="item-title">Artwork 5</div>
             </div>
             <div class="item tall" data-artist="A">
-              <img src="./Images/6.png" loading="lazy" />
+              <img src="./CompressedImages/6.png" loading="lazy" />
               <div class="item-title">Artwork 6</div>
             </div>
             <div class="item short" data-artist="T">
-              <img src="./Images/7.png" loading="lazy" />
+              <img src="./CompressedImages/7.png" loading="lazy" />
               <div class="item-title">Artwork 7</div>
             </div>
             <div class="item" data-artist="N">
-              <img src="./Images/8.png" loading="lazy" />
+              <img src="./CompressedImages/8.png" loading="lazy" />
               <div class="item-title">Artwork 8</div>
             </div>
             <div class="item tall" data-artist="C">
-              <img src="./Images/9.png" loading="lazy" />
+              <img src="./CompressedImages/9.png" loading="lazy" />
               <div class="item-title">Artwork 9</div>
             </div>
             <div class="item short" data-artist="U">
-              <img src="./Images/10.png" loading="lazy" />
+              <img src="./CompressedImages/10.png" loading="lazy" />
               <div class="item-title">Artwork 10</div>
             </div>
             <div class="item" data-artist="H">
-              <img src="./Images/11.png" loading="lazy" />
+              <img src="./CompressedImages/11.png" loading="lazy" />
               <div class="item-title">Artwork 11</div>
             </div>
             <div class="item tall" data-artist="Z">
-              <img src="./Images/12.png" loading="lazy" />
+              <img src="./CompressedImages/12.png" loading="lazy" />
               <div class="item-title">Artwork 12</div>
             </div>
             <div class="item short" data-artist="O">
-              <img src="./Images/13.png" loading="lazy" />
+              <img src="./CompressedImages/13.png" loading="lazy" />
               <div class="item-title">Artwork 13</div>
             </div>
             <div class="item" data-artist="F">
-              <img src="./Images/14.png" loading="lazy" />
+              <img src="./CompressedImages/14.png" loading="lazy" />
               <div class="item-title">Artwork 14</div>
             </div>
             <div class="item tall" data-artist="W">
-              <img src="./Images/15.png" loading="lazy" />
+              <img src="./CompressedImages/15.png" loading="lazy" />
               <div class="item-title">Artwork 15</div>
             </div>
           </section>
@@ -277,19 +264,20 @@
           }
         });
 
+        // --- CLICK TO SLIDER ---
+        images.forEach((img) => {
+          img.addEventListener("click", () => {
+            const src = img.src;
+            const match = src.match(/CompressedImages\/(\d+)\.png$/);
+            if (match) {
+              const slideNum = match[1];
+              window.location.href = `./slideshow.html?slide=${slideNum}`;
+            }
+          });
+        });
+
         });
     </script>
-    <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script>
-    <script>
-      // Initialize Lenis
-      const lenis = new Lenis({
-        autoRaf: true,
-      });
 
-      // Listen for the scroll event and log the event data
-      lenis.on("scroll", (e) => {
-        console.log(e);
-      });
-    </script>
   </body>
 </html>

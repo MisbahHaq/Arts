@@ -59,6 +59,16 @@
 
       let currentIndex = 0;
 
+      // Check URL parameter for starting slide
+      const urlParams = new URLSearchParams(window.location.search);
+      const slideParam = urlParams.get('slide');
+      if (slideParam) {
+        const slideNum = parseInt(slideParam, 10);
+        if (slideNum >= 1 && slideNum <= slides.length) {
+          currentIndex = slideNum - 1;
+        }
+      }
+
       totalSlidesEl.textContent = slides.length;
 
       // Helper to handle fade-out/fade-in transitions
@@ -115,16 +125,19 @@
         else if (endX - startX > 50) prevBtn.click();
       });
 
-      // Appear transition for first image on load
+      // Appear transition for initial image on load
       window.addEventListener("DOMContentLoaded", () => {
         slides.forEach((slide, i) => {
           slide.classList.remove("active", "fading-out", "appearing");
         });
-        // Add appearing class to first slide for transition
-        slides[0].classList.add("appearing");
+        // Add appearing class to initial slide for transition
+        slides[currentIndex].classList.add("appearing");
         setTimeout(() => {
-          slides[0].classList.remove("appearing");
-          slides[0].classList.add("active");
+          slides[currentIndex].classList.remove("appearing");
+          slides[currentIndex].classList.add("active");
+          // Update UI elements
+          currentSlideEl.textContent = currentIndex + 1;
+          slideTitleEl.textContent = slides[currentIndex].alt;
         }, 700); // match transition duration in CSS
       });
     </script>
