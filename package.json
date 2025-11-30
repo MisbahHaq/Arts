@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "sharp": "^0.34.5",
+    "tinify": "^1.8.2"
+  }
+}
