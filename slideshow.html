@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Masters - Slideshow</title>
-    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="slider.css" />
   </head>
   <body>
     <!-- Page transition overlay -->
     <div class="page-transition active"></div>
 
     <div class="slideshow-container">
+      <!-- Close Button -->
+      <button class="close-button">&times;</button>
+
       <!-- Slides -->
       <img class="slide" src="./Images/1.png" alt="Artwork 1" />
       <img class="slide" src="./Images/2.png" alt="Artwork 2" />
@@ -35,12 +38,6 @@
       <div class="slide-counter">
         <span id="currentSlide">1</span> / <span id="totalSlides">16</span>
       </div>
-
-      <!-- Slide Info -->
-      <div class="slide-info">
-        <h2 id="slideTitle">Artwork 1</h2>
-        <p id="slideDescription">Masterpiece from The Masters collection</p>
-      </div>
     </div>
 
     <!-- Floating View Toggle -->
@@ -53,15 +50,15 @@
       const slides = document.querySelectorAll(".slide");
       const prevBtn = document.querySelector(".prev");
       const nextBtn = document.querySelector(".next");
+      const closeBtn = document.querySelector(".close-button");
       const currentSlideEl = document.getElementById("currentSlide");
       const totalSlidesEl = document.getElementById("totalSlides");
-      const slideTitleEl = document.getElementById("slideTitle");
 
       let currentIndex = 0;
 
       // Check URL parameter for starting slide
       const urlParams = new URLSearchParams(window.location.search);
-      const slideParam = urlParams.get('slide');
+      const slideParam = urlParams.get("slide");
       if (slideParam) {
         const slideNum = parseInt(slideParam, 10);
         if (slideNum >= 1 && slideNum <= slides.length) {
@@ -95,8 +92,16 @@
           }
         });
         currentSlideEl.textContent = index + 1;
-        slideTitleEl.textContent = slides[index].alt;
       }
+
+      closeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        transitionEl.classList.remove("hidden");
+        slides[currentIndex].classList.add("closing");
+        setTimeout(() => {
+          window.location.href = "./index.html";
+        }, 600);
+      });
 
       prevBtn.addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
@@ -137,7 +142,6 @@
           slides[currentIndex].classList.add("active");
           // Update UI elements
           currentSlideEl.textContent = currentIndex + 1;
-          slideTitleEl.textContent = slides[currentIndex].alt;
         }, 700); // match transition duration in CSS
       });
     </script>

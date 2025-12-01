@@ -4,15 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Misbah Haque</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Page transition overlay -->
     <div class="page-transition"></div>
 
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <h1>Misbah Haque</h1>
+    </div>
+
     <div class="container">
       <aside class="sidebar">
-        <div class="logo">ONE DAY YOU</div>
+        <div class="logo">Misbah Haque</div>
         <h1>
           <span class="light">THE</span> <span class="bold">MASTERS</span
           ><br />IN ALL SORTS OF ART
@@ -31,7 +36,6 @@
       </aside>
 
       <main class="content">
-        
         <div class="gallery-wrapper">
           <section class="gallery">
             <div class="item corner" data-artist="K">
@@ -95,9 +99,18 @@
               <div class="item-title">Artwork 15</div>
             </div>
           </section>
+          <button id="showMoreBtn" class="show-more-btn">Show More</button>
         </div>
       </main>
     </div>
+
+    <!-- Mobile Footer -->
+    <footer class="mobile-footer">
+      <p>UNMAPPED</p>
+      <p>PLAYLIST</p>
+      <p>INSTAGRAM</p>
+      <p>EMAIL</p>
+    </footer>
 
     <!-- Floating View Toggle -->
     <div class="floating-nav">
@@ -276,8 +289,61 @@
           });
         });
 
-        });
-    </script>
+        // --- MOBILE SHOW MORE ---
+        const showMoreBtn = document.getElementById("showMoreBtn");
+        const allGalleryItems = document.querySelectorAll(".gallery .item");
 
+        function isMobile() {
+          return window.matchMedia("(max-width: 767px)").matches;
+        }
+
+        function toggleShowMore() {
+          if (isMobile()) {
+            // Hide items beyond first 6
+            allGalleryItems.forEach((item, index) => {
+              if (index >= 6) {
+                item.classList.add("mobile-hidden");
+              }
+            });
+          } else {
+            // Show all on desktop
+            allGalleryItems.forEach((item) => {
+              item.classList.remove("mobile-hidden");
+            });
+            showMoreBtn.classList.remove("show");
+          }
+        }
+
+        // Initial check
+        toggleShowMore();
+
+        // On resize
+        window.addEventListener("resize", toggleShowMore);
+
+        // Show more button click
+        showMoreBtn.addEventListener("click", () => {
+          allGalleryItems.forEach((item) => {
+            item.classList.remove("mobile-hidden");
+          });
+          showMoreBtn.classList.remove("show");
+        });
+
+        // Show button on scroll to bottom
+        function checkScroll() {
+          if (
+            window.innerHeight + window.scrollY >=
+            document.body.scrollHeight - 50
+          ) {
+            if (isMobile()) {
+              showMoreBtn.classList.add("show");
+            }
+          } else {
+            showMoreBtn.classList.remove("show");
+          }
+        }
+
+        window.addEventListener("scroll", checkScroll);
+      });
+    </script>
   </body>
 </html>
