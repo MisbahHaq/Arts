@@ -190,7 +190,8 @@ function initIntroAnimation() {
 function initMenu() {
     const menuButton = document.querySelector('.menu-button');
     const menuBlur = document.querySelector('.menu-blur');
-    const navMenu = document.querySelector('.nav-menu');
+    const isMobile = window.innerWidth <= 767;
+    const menuElement = isMobile ? document.querySelector('.left-navbar') : document.querySelector('.nav-menu');
     const menuStaggerElements = document.querySelectorAll('.menu-stagger');
     const menuOpen = document.querySelector('.menu-open');
     const menuClose = document.querySelector('.menu-close');
@@ -202,20 +203,27 @@ function initMenu() {
     menuTimeline = gsap.timeline({ paused: true });
 
     menuTimeline
-        .to(navMenu, { x: 0, duration: 0.5 })
-        .to(menuOpen, { y: '-100%', duration: 0.5 }, '<')
-        .to(menuClose, { y: '0%', duration: 0.5 }, '<')
+        .to(menuOpen, { y: '-100%', duration: 0.5 })
+        .to(menuClose, { y: '0%', duration: 0.5 }, '<');
+
+    if (!isMobile) {
+        menuTimeline
+            .to(menuElement, { x: 0, duration: 0.5 }, '<')
+            .to(menuBlur, { opacity: 1, duration: 0.5 }, '<');
+    }
+
+    menuTimeline
         .from(menuStaggerElements, {
             y: 30,
             autoAlpha: 0,
             duration: 1,
             stagger: 0.03,
-        }, '<')
-        .to(menuBlur, { opacity: 1, duration: 0.5 }, '<');
+        }, '<');
 
     // Menu button click handler
     if (menuButton) {
-        menuButton.addEventListener('click', () => {
+        menuButton.addEventListener('click', (e) => {
+            e.preventDefault();
             if (isMenuOpen) {
                 closeMenu();
             } else {
@@ -225,25 +233,33 @@ function initMenu() {
     }
 
     // Menu blur click handler
-    if (menuBlur) {
+    if (menuBlur && !isMobile) {
         menuBlur.addEventListener('click', closeMenu);
     }
 
     function openMenu() {
         isMenuOpen = true;
-        navMenu.classList.add('active');
-        menuBlur.classList.add('active');
+        menuElement.classList.add('active');
+        if (!isMobile) {
+            menuBlur.classList.add('active');
+        }
         menuTimeline.play();
-        document.body.style.overflow = 'hidden';
+        if (!isMobile) {
+            document.body.style.overflow = 'hidden';
+        }
     }
 
     function closeMenu() {
         if (!isMenuOpen) return;
         isMenuOpen = false;
-        navMenu.classList.remove('active');
-        menuBlur.classList.remove('active');
+        menuElement.classList.remove('active');
+        if (!isMobile) {
+            menuBlur.classList.remove('active');
+        }
         menuTimeline.reverse();
-        document.body.style.overflow = '';
+        if (!isMobile) {
+            document.body.style.overflow = '';
+        }
     }
 
     // Escape key handler

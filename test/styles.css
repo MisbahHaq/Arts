@@ -495,8 +495,8 @@ a:hover {
     height: 40px;
 }
 
-/* Mobile Menu Button */
-.home_mobile-menu {
+/* Menu Button Container */
+.menu-container {
     display: none;
     position: fixed;
     top: var(--size5);
@@ -864,7 +864,7 @@ a:hover {
         display: none;
     }
 
-    .home_mobile-menu {
+    .menu-container {
         display: block;
     }
 
