@@ -143,6 +143,8 @@ a:hover {
     --light-1: 255, 255, 255;
     --light-2: 244, 244, 241;
     --brand-1: 198, 251, 80;
+    --navbar-height: 80px;
+    --mobile-navbar-height: 64px;
 
     /* Section mode 1 (dark theme) */
     --m-bg1: rgba(var(--dark-1), 1);
@@ -213,7 +215,7 @@ a:hover {
     height: 100vh;
     background: var(--m-bg1);
     border-right: 1px solid var(--m-bc1);
-    z-index: 100;
+    z-index: 200;
     padding: var(--size5) var(--size4);
     overflow: hidden;
     backdrop-filter: blur(10px);
@@ -260,12 +262,15 @@ a:hover {
 }
 
 .navbar-section-title {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--m-fc1);
-    margin: 0;
+    margin: 0 0 var(--size2) 0;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
 }
 
 .navbar-links {
@@ -282,16 +287,22 @@ a:hover {
 }
 
 .navbar-links a {
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: var(--m-fc2);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--m-fc1);
     text-decoration: none;
     transition: color 0.2s ease;
-    padding: var(--size1) 0;
+    padding: var(--size2) 0;
+    position: relative;
+    z-index: 2;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
 }
 
 .navbar-links a:hover {
     color: var(--brand-1);
+    transform: translateX(8px);
 }
 
 .navbar-social {
@@ -352,6 +363,11 @@ a:hover {
     overflow-y: auto;
 }
 
+.menu-links a {
+    position: relative;
+    z-index: 1;
+}
+
 .nav-logo-link-wrap {
     margin-bottom: var(--size6);
 }
@@ -408,6 +424,8 @@ a:hover {
     text-transform: uppercase;
     color: var(--m-fc2);
     transition: color 0.2s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .nav-links a:hover {
@@ -426,6 +444,8 @@ a:hover {
     font-weight: 600;
     color: var(--m-fc1);
     transition: color 0.2s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .partnership-links--gp0-5 a:hover {
@@ -554,7 +574,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2000;
+    z-index: 3000;
 }
 
 .intro-logo-wrap {
@@ -641,7 +661,7 @@ a:hover {
 
 .inverted-slides {
     left: calc(50vw - 150px);
-    z-index: 2;
+    z-index: 1;
 }
 
 .slide {
@@ -743,8 +763,8 @@ a:hover {
 
 /* Menu stagger animation */
 .menu-stagger {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .menu-stagger.animate {
@@ -843,10 +863,27 @@ a:hover {
     .left-navbar {
         transform: translateX(-100%);
         transition: transform 0.3s ease;
+        z-index: 100;
+        visibility: visible;
     }
 
     .left-navbar.active {
         transform: translateX(0);
+    }
+
+    .navbar-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .navbar-links a,
+    .navbar-section-title,
+    .navbar-social .social-link {
+        position: relative;
+        z-index: 2;
+        opacity: 1 !important;
+        visibility: visible !important;
+        color: var(--m-fc1) !important;
     }
 
     .home_hero {
@@ -880,6 +917,21 @@ a:hover {
         opacity: 1;
     }
 
+    .navbar-section-title {
+        font-size: 0.85rem;
+        opacity: 1 !important;
+        visibility: visible !important;
+        color: var(--m-fc1) !important;
+    }
+
+    .navbar-links a {
+        font-size: 1rem;
+        padding: var(--size2) 0;
+        opacity: 1 !important;
+        visibility: visible !important;
+        color: var(--m-fc1) !important;
+    }
+
     .intro-mask {
         width: 120px;
         height: 48px;
@@ -908,6 +960,13 @@ a:hover {
     .intro-mask {
         width: 100px;
         height: 40px;
+    }
+}
+
+/* Desktop reset for left-navbar */
+@media screen and (min-width: 768px) {
+    .left-navbar {
+        transform: translateX(0);
     }
 }
 
