@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Only Agency</title>
+    <meta
+      name="description"
+      content="We champion creative leaders who are persistently redefining trends and pushing the limits in the fashion, beauty, and entertainment industries."
+    />
+
+    <!-- Fonts -->
+    <script
+      src="https://use.typekit.net/rtw1sct.js"
+      type="text/javascript"
+    ></script>
+    <script type="text/javascript">
+      try {
+        Typekit.load();
+      } catch (e) {}
+    </script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+
+    <style>
+      /* Initial loading styles */
+      html {
+        opacity: 0;
+        transition: opacity 0s ease-out;
+      }
+      html.webflow-loaded {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body data-barba="wrapper" class="body is--overflow-hidden">
+    <!-- Page Wrapper -->
+    <div
+      data-barba-namespace="home-page"
+      data-barba="container"
+      class="page_wrap"
+    >
+      <div class="page_code_wrap">
+        <!-- Navigation Menu -->
+        <div class="nav-menu">
+          <div class="menu--bg1-pd1-gp2 sm0-2">
+            <div class="menu-links">
+              <div class="nav-logo-link-wrap">
+                <a href="/" class="nav-logo-link">
+                  <div class="w-layout-vflex mask">
+                    <img
+                      src="assets/logo-menu-1.svg"
+                      alt=""
+                      class="menu-logo-1"
+                    />
+                  </div>
+                  <div class="w-layout-vflex mask">
+                    <img
+                      src="assets/logo-menu-2.svg"
+                      alt=""
+                      class="menu-logo-2"
+                    />
+                  </div>
+                  <div class="w-layout-vflex mask">
+                    <img
+                      src="assets/logo-menu-3.svg"
+                      alt=""
+                      class="menu-logo-3"
+                    />
+                  </div>
+                </a>
+              </div>
+
+              <div class="nav-info--gp0-25">
+                <h2 class="fs5-menu menu-stagger">Artists</h2>
+                <div class="nav-links">
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/styling" class="fs8">Styling</a>
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/hair" class="fs8">Hair</a>
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/makeup" class="fs8">Makeup</a>
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/photography" class="fs8">Photography</a>
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/creative-direction" class="fs8"
+                      >Creative Direction</a
+                    >
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/manicure" class="fs8">Manicure</a>
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/color" class="fs8">Color</a>
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/custom-design" class="fs8">Custom Design</a>
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/production-design" class="fs8"
+                      >Production Design</a
+                    >
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/sports-division" class="fs8">sports</a>
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/grooming" class="fs8">grooming</a>
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/skin" class="fs8">skin</a>
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/casting" class="fs8">casting</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="nav-info--gp0-25">
+                <h2 class="fs5-menu menu-stagger">Location</h2>
+                <div class="nav-links">
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/los-angeles" class="fs8">Los Angeles</a>
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/new-york" class="fs8">New York</a>
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/london" class="fs8">London</a>
+                  </div>
+                  <div class="w-layout-vflex menu-stagger">
+                    <a href="/nashville" class="fs8">Nashville</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="partnership-links--gp0-5">
+                <div class="w-layout-vflex menu-stagger">
+                  <a href="/sports-division" class="fs5-menu"
+                    >Sports Division</a
+                  >
+                </div>
+                <div class="w-layout-vflex menu-stagger">
+                  <a href="/brand-partnerships" class="fs5-menu"
+                    >Brand Partnerships</a
+                  >
+                </div>
+                <div class="w-layout-vflex menu-stagger">
+                  <a href="/publications" class="fs5-menu">Publications</a>
+                </div>
+                <div class="w-layout-vflex menu-stagger">
+                  <a href="/sustainability-services" class="fs5-menu"
+                    >Sustainability Services</a
+                  >
+                </div>
+                <div class="w-layout-vflex menu-stagger">
+                  <a href="/about" class="fs5-menu">About</a>
+                </div>
+              </div>
+
+              <div class="social-links">
+                <a
+                  href="https://www.instagram.com/theonly.agency/?hl=en"
+                  target="_blank"
+                  class="social-link"
+                >
+                  <img src="assets/instagram.svg" alt="" class="menu-stagger" />
+                </a>
+                <a
+                  href="https://www.facebook.com/TheOnly.Agency/"
+                  target="_blank"
+                  class="social-link"
+                >
+                  <img src="assets/facebook.svg" alt="" class="menu-stagger" />
+                </a>
+                <a href="mailto:info@theonly.agency" class="social-link">
+                  <img src="assets/email.svg" alt="" class="menu-stagger" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu Blur Overlay -->
+        <div class="menu-blur"></div>
+
+        <!-- Fixed Logo Top -->
+        <div class="fixed-logo-top">
+          <a href="/" class="fixed-logo-link">
+            <img
+              src="assets/the-only-logo-horizontal.svg"
+              alt=""
+              class="only          </a>
+-logo"
+            />
+        </div>
+
+        <!-- Transition Overlay -->
+        <div class="transition">
+          <div class="transition-trigger"></div>
+          <div class="transition-content">
+            <div class="transition-bg">
+              <div class="transition-color"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intro Section -->
+        <div class="intro">
+          <div class="intro-logo-wrap">
+            <div class="intro-mask">
+              <img src="assets/intro-img-1.svg" alt="" class="intro-logo-1" />
+            </div>
+            <div class="intro-mask">
+              <img src="assets/intro-img-2.svg" alt="" class="intro-logo-2" />
+            </div>
+            <div class="intro-mask">
+              <img src="assets/intro-img-3.svg" alt="" class="intro-logo-3" />
+            </div>
+          </div>
+          <div class="intro-fade"></div>
+        </div>
+
+        <!-- Left Navigation Column -->
+        <div class="left-navbar">
+            <div class="navbar-content">
+                <div class="navbar-logo">
+                    <a href="/" class="navbar-logo-link">
+                        <img src="assets/the-only-logo-horizontal.svg" alt="" class="navbar-logo-img"/>
+                    </a>
+                </div>
+                
+                <nav class="navbar-nav">
+                    <div class="navbar-section">
+                        <h3 class="navbar-section-title">Artists</h3>
+                        <ul class="navbar-links">
+                            <li><a href="/styling">Styling</a></li>
+                            <li><a href="/hair">Hair</a></li>
+                            <li><a href="/makeup">Makeup</a></li>
+                            <li><a href="/photography">Photography</a></li>
+                            <li><a href="/creative-direction">Creative Direction</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="navbar-section">
+                        <h3 class="navbar-section-title">Location</h3>
+                        <ul class="navbar-links">
+                            <li><a href="/los-angeles">Los Angeles</a></li>
+                            <li><a href="/new-york">New York</a></li>
+                            <li><a href="/london">London</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="navbar-section">
+                        <h3 class="navbar-section-title">About</h3>
+                        <ul class="navbar-links">
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                
+                <div class="navbar-social">
+                    <a href="https://www.instagram.com/theonly.agency/?hl=en" target="_blank" class="social-link">
+                        <img src="assets/instagram.svg" alt="Instagram"/>
+                    </a>
+                    <a href="https://www.facebook.com/TheOnly.Agency/" target="_blank" class="social-link">
+                        <img src="assets/facebook.svg" alt="Facebook"/>
+                    </a>
+                    <a href="mailto:info@theonly.agency" class="social-link">
+                        <img src="assets/email.svg" alt="Email"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="home_mobile-menu">
+          <a href="#" class="menu-button">
+            <p>●</p>
+            <div class="menu-text-wrap">
+              <p class="menu-open"><em>Menu</em></p>
+              <p class="menu-close">Close</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Main Content -->
+        <main class="page_main">
+          <section class="home_hero">
+            <div class="home-menu">
+              <div class="menu--bg1-pd1-gp2 sm0-2">
+                <div class="menu-links">
+                  <div class="nav-logo-link-wrap">
+                    <a href="/" class="nav-logo-link">
+                      <div class="w-layout-vflex mask">
+                        <img
+                          src="assets/logo-menu-1.svg"
+                          alt=""
+                          class="menu-logo-1"
+                        />
+                      </div>
+                      <div class="w-layout-vflex mask">
+                        <img
+                          src="assets/logo-menu-2.svg"
+                          alt=""
+                          class="menu-logo-2"
+                        />
+                      </div>
+                      <div class="w-layout-vflex mask">
+                        <img
+                          src="assets/logo-menu-3.svg"
+                          alt=""
+                          class="menu-logo-3"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                  <div class="nav-info--gp0-25">
+                    <h2 class="fs5-menu menu-stagger">Artists</h2>
+                    <div class="nav-links">
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/styling" class="fs8">Styling</a>
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/hair" class="fs8">Hair</a>
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/makeup" class="fs8">Makeup</a>
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/photography" class="fs8">Photography</a>
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/creative-direction" class="fs8"
+                          >Creative Direction</a
+                        >
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/manicure" class="fs8">Manicure</a>
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/color" class="fs8">Color</a>
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/custom-design" class="fs8">Custom Design</a>
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/production-design" class="fs8"
+                          >Production Design</a
+                        >
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/sports-division" class="fs8">sports</a>
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/grooming" class="fs8">grooming</a>
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/skin" class="fs8">skin</a>
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/casting" class="fs8">casting</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nav-info--gp0-25">
+                    <h2 class="fs5-menu menu-stagger">Location</h2>
+                    <div class="nav-links">
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/los-angeles" class="fs8">Los Angeles</a>
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/new-york" class="fs8">New York</a>
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/london" class="fs8">London</a>
+                      </div>
+                      <div class="w-layout-vflex menu-stagger">
+                        <a href="/nashville" class="fs8">Nashville</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="partnership-links--gp0-5">
+                    <div class="w-layout-vflex menu-stagger">
+                      <a href="/sports-division" class="fs5-menu"
+                        >Sports Division</a
+                      >
+                    </div>
+                    <div class="w-layout-vflex menu-stagger">
+                      <a href="/brand-partnerships" class="fs5-menu"
+                        >Brand Partnerships</a
+                      >
+                    </div>
+                    <div class="w-layout-vflex menu-stagger">
+                      <a href="/publications" class="fs5-menu">Publications</a>
+                    </div>
+                    <div class="w-layout-vflex menu-stagger">
+                      <a href="/sustainability-services" class="fs5-menu"
+                        >Sustainability Services</a
+                      >
+                    </div>
+                    <div class="w-layout-vflex menu-stagger">
+                      <a href="/about" class="fs5-menu">About</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-layout-vflex slide_wrap">
+              <!-- Main Slideshow -->
+              <div class="slides">
+                <div class="slide slide--current">
+                  <img src="assets/1.png" alt="" class="slide__img" />
+                </div>
+                <div class="slide">
+                  <img src="assets/2.png" alt="" class="slide__img" />
+                </div>
+                <div class="slide">
+                  <img src="assets/3.png" alt="" class="slide__img" />
+                </div>
+                <div class="slide">
+                  <img src="assets/4.png" alt="" class="slide__img" />
+                </div>
+                <div class="slide">
+                  <img src="assets/5.png" alt="" class="slide__img" />
+                </div>
+                <div class="slide">
+                  <img src="assets/6.png" alt="" class="slide__img" />
+                </div>
+                <div class="slide">
+                  <img src="assets/7.png" alt="" class="slide__img" />
+                </div>
+                <div class="slide">
+                  <img src="assets/8.png" alt="" class="slide__img" />
+                </div>
+                <div class="slide">
+                  <img src="assets/9.png" alt="" class="slide__img" />
+                </div>
+              </div>
+
+              <!-- Inverted Slideshow -->
+              <div class="inverted-slides">
+                <div class="slide slide--current">
+                  <img src="assets/10.png" alt="" class="slide__img" />
+                </div>
+                <div class="slide">
+                  <img src="assets/11.png" alt="" class="slide__img" />
+                </div>
+                <div class="slide">
+                  <img src="assets/12.png" alt="" class="slide__img" />
+                </div>
+                <div class="slide">
+                  <img src="assets/13.png" alt="" class="slide__img" />
+                </div>
+                <div class="slide">
+                  <img src="assets/14.png" alt="" class="slide__img" />
+                </div>
+                <div class="slide">
+                  <img src="assets/15.png" alt="" class="slide__img" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Navigation -->
+          <div class="navigation">
+            <div class="slide_number-wrap">
+              <div class="slide_dynamic-number-wrap">
+                <div class="slide_dynamic-number">
+                  <p class="size-5 is--height-1">01</p>
+                </div>
+                <div class="slide_dynamic-number">
+                  <p class="size-5 is--height-1">02</p>
+                </div>
+                <div class="slide_dynamic-number">
+                  <p class="size-5 is--height-1">03</p>
+                </div>
+                <div class="slide_dynamic-number">
+                  <p class="size-5 is--height-1">04</p>
+                </div>
+                <div class="slide_dynamic-number">
+                  <p class="size-5 is--height-1">05</p>
+                </div>
+                <div class="slide_dynamic-number">
+                  <p class="size-5 is--height-1">06</p>
+                </div>
+                <div class="slide_dynamic-number">
+                  <p class="size-5 is--height-1">07</p>
+                </div>
+                <div class="slide_dynamic-number">
+                  <p class="size-5 is--height-1">08</p>
+                </div>
+                <div class="slide_dynamic-number">
+                  <p class="size-5 is--height-1">09</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="hidden-nav">
+              <div class="slides-nav__item--prev"></div>
+              <div class="slides-nav__item--next"></div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
