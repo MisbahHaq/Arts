@@ -499,15 +499,14 @@ a:hover {
 .menu-container {
     display: none;
     position: fixed;
-    top: var(--size5);
-    right: var(--size5);
+    top: 20px;
+    right: 20px;
     z-index: 1001;
 }
 
 .menu-button {
     display: flex;
     align-items: center;
-    gap: var(--size3);
     background: transparent;
     border: none;
     color: var(--m-fc1);
@@ -527,6 +526,7 @@ a:hover {
     overflow: hidden;
     width: 60px;
     height: 20px;
+    text-align: center;
 }
 
 .menu-open,
@@ -858,6 +858,10 @@ a:hover {
         width: 100%;
         left: 0;
         position: absolute;
+    }
+
+    .slide__img {
+        object-fit: contain;
     }
 
     .inverted-slides {
