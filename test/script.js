@@ -4,11 +4,8 @@
 gsap.registerPlugin(ScrollTrigger, Observer);
 gsap.defaults({ ease: "power1.inOut", duration: 1.5 });
 
-// Add webflow-loaded class
-gsap.timeline()
-    .set('html', { opacity: 0 })
-    .to('html', { opacity: 1, duration: 0.3, ease: "power2.out" })
-    .add(() => document.documentElement.classList.add('webflow-loaded'));
+// Add webflow-loaded class immediately
+document.documentElement.classList.add('webflow-loaded');
 
 // ================================
 // SLIDESHOW SYSTEM
@@ -120,75 +117,11 @@ function updateNavigationIndicator(activeIndex) {
 // INTRO ANIMATION
 // ================================
 function initIntroAnimation() {
-    // Skip intro animation on shop page for better performance
-    if (document.querySelector('[data-barba-namespace="shop-page"]')) {
-        gsap.set('.intro', { display: 'none' });
-        gsap.set('.fixed-logo-top', { autoAlpha: 1 });
-        return;
-    }
-
-    const introTimeline = gsap.timeline({ paused: true });
-
-    // Initial setup
-    gsap.set(['.intro-logo-1', '.intro-logo-2', '.intro-logo-3'], {
-        autoAlpha: 0
-    });
-
-    // Slide in intro logos
-    introTimeline
-        .from('.intro-logo-1', {
-            y: -100,
-            autoAlpha: 0,
-            duration: 1.5,
-            ease: "expo.out"
-        })
-        .from('.intro-logo-2', {
-            y: 100,
-            autoAlpha: 0,
-            duration: 1.5,
-            ease: "expo.out"
-        }, '-=1.3')
-        .from('.intro-logo-3', {
-            y: -100,
-            autoAlpha: 0,
-            duration: 1.5,
-            ease: "expo.out"
-        }, '-=1.3')
-        // Fade out intro
-        .to('.intro-logo-1', {
-            y: 100,
-            autoAlpha: 0,
-            duration: 1
-        })
-        .to('.intro-logo-2', {
-            y: -100,
-            autoAlpha: 0,
-            duration: 1
-        }, '-=1')
-        .to('.intro-logo-3', {
-            y: 100,
-            autoAlpha: 0,
-            duration: 1
-        }, '-=1')
-        .to('.intro', {
-            autoAlpha: 0,
-            duration: 1,
-            onComplete: () => {
-                gsap.set('.intro', { display: 'none' });
-                // Start slideshows after intro
-                startSlideshows();
-            }
-        }, '-=1')
-        // Show fixed logo
-        .to('.fixed-logo-top', {
-            autoAlpha: 1,
-            duration: 0.5
-        }, '-=0.5');
-
-    // Auto-play intro after a short delay
-    setTimeout(() => {
-        introTimeline.play();
-    }, 500);
+    // Skip intro animation for faster loading
+    gsap.set('.intro', { display: 'none' });
+    gsap.set('.fixed-logo-top', { autoAlpha: 1 });
+    // Start slideshows immediately
+    startSlideshows();
 }
 
 // ================================
@@ -415,6 +348,12 @@ function optimizePerformance() {
     images.forEach(img => {
         img.loading = 'lazy';
         img.decoding = 'async';
+    });
+
+    // Set current slideshow images to eager loading
+    const currentSlides = document.querySelectorAll('.slide--current .slide__img');
+    currentSlides.forEach(img => {
+        img.loading = 'eager';
     });
 
     // Optimize GSAP animations
