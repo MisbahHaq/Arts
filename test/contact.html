@@ -7,15 +7,178 @@
   lang="en"
 >
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact - Hasan Raheem</title>
     <link
       href="https://cdn.prod.website-files.com/67ed4bc8ed4db70adb38d0bc/css/hasan-raheem.webflow.shared.d9d71158a.css"
       rel="stylesheet"
       type="text/css"
     />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
   </head>
   <body>
     <div class="page-wrapper">
+      <div class="nav-menu">
+        <div class="menu--bg1-pd1-gp2 sm0-2">
+          <div class="menu-links">
+            <div class="nav-logo-link-wrap">
+              <a href="/" class="nav-logo-link">
+                <div class="w-layout-vflex mask">
+                  <img
+                    src="assets/logo-menu-1.svg"
+                    alt=""
+                    class="menu-logo-1"
+                  />
+                </div>
+                <div class="w-layout-vflex mask">
+                  <img
+                    src="assets/logo-menu-2.svg"
+                    alt=""
+                    class="menu-logo-2"
+                  />
+                </div>
+                <div class="w-layout-vflex mask">
+                  <img
+                    src="assets/logo-menu-3.svg"
+                    alt=""
+                    class="menu-logo-3"
+                  />
+                </div>
+              </a>
+            </div>
+
+            <div class="nav-info--gp0-25">
+              <h2 class="fs5-menu menu-stagger">Works</h2>
+              <div class="nav-links">
+                <div class="w-layout-vflex menu-stagger">
+                  <a href="/styling" class="fs8">Designs</a>
+                </div>
+                <div class="w-layout-vflex menu-stagger">
+                  <a href="/hair" class="fs8">Web</a>
+                </div>
+                <div class="w-layout-vflex menu-stagger">
+                  <a href="/makeup" class="fs8">App</a>
+                </div>
+                <div class="w-layout-vflex menu-stagger">
+                  <a href="/shop.html" class="fs8">Shop</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="partnership-links--gp0-5">
+              <div class="w-layout-vflex menu-stagger">
+                <a href="/about" class="fs5-menu">About Us</a>
+              </div>
+              <div class="w-layout-vflex menu-stagger">
+                <a href="/contact.html" class="fs5-menu">Contact</a>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/theonly.agency/?hl=en"
+                target="_blank"
+                class="social-link"
+              >
+                <img src="assets/instagram.svg" alt="" class="menu-stagger" />
+              </a>
+              <a
+                href="https://www.facebook.com/TheOnly.Agency/"
+                target="_blank"
+                class="social-link"
+              >
+                <img src="assets/facebook.svg" alt="" class="menu-stagger" />
+              </a>
+              <a href="mailto:info@theonly.agency" class="social-link">
+                <img src="assets/email.svg" alt="" class="menu-stagger" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-blur"></div>
+
+      <div class="fixed-logo-top">
+        <a href="/" class="fixed-logo-link">
+          <img
+            src="assets/the-only-logo-horizontal.svg"
+            alt=""
+            class="only-logo"
+          />
+        </a>
+      </div>
+
+      <div class="left-navbar">
+        <div class="navbar-content">
+          <div class="navbar-logo">
+            <a href="/" class="navbar-logo-link">
+              <img
+                src="assets/the-only-logo-horizontal.svg"
+                alt=""
+                class="navbar-logo-img"
+              />
+            </a>
+          </div>
+
+          <nav class="navbar-nav">
+            <div class="navbar-section">
+              <h3 class="navbar-section-title menu-stagger">Works</h3>
+              <ul class="navbar-links">
+                <li><a href="/styling" class="menu-stagger">Designs</a></li>
+                <li><a href="/hair" class="menu-stagger">Web</a></li>
+                <li><a href="/makeup" class="menu-stagger">App</a></li>
+                <li><a href="/shop.html" class="menu-stagger">Shop</a></li>
+              </ul>
+            </div>
+
+            <div class="navbar-section">
+              <h3 class="navbar-section-title menu-stagger">About</h3>
+              <ul class="navbar-links">
+                <li><a href="/about" class="menu-stagger">About Us</a></li>
+                <li>
+                  <a href="/contact.html" class="menu-stagger">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+          <div class="navbar-social">
+            <a
+              href="https://www.instagram.com/theonly.agency/?hl=en"
+              target="_blank"
+              class="social-link"
+            >
+              <img src="assets/instagram.svg" alt="Instagram" />
+            </a>
+            <a
+              href="https://www.facebook.com/TheOnly.Agency/"
+              target="_blank"
+              class="social-link"
+            >
+              <img src="assets/facebook.svg" alt="Facebook" />
+            </a>
+            <a href="mailto:info@theonly.agency" class="social-link">
+              <img src="assets/email.svg" alt="Email" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-container">
+        <a href="#" class="menu-button">
+          <div class="menu-text-wrap">
+            <p class="menu-open"><em>Menu</em></p>
+            <p class="menu-close">Close</p>
+          </div>
+        </a>
+      </div>
+
       <main class="main">
         <div class="hero-page-wrapper">
           <div
@@ -254,7 +417,6 @@
             </div>
           </div>
         </section>
-      
       </main>
     </div>
     <script
@@ -279,5 +441,6 @@
       src="https://cdn.prod.website-files.com/67ed4bc8ed4db70adb38d0bc/js/webflow.ddbcc9b4.78cc1c3e4a72fa51.js"
       type="text/javascript"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -120,6 +120,13 @@ function updateNavigationIndicator(activeIndex) {
 // INTRO ANIMATION
 // ================================
 function initIntroAnimation() {
+    // Skip intro animation on shop page for better performance
+    if (document.querySelector('[data-barba-namespace="shop-page"]')) {
+        gsap.set('.intro', { display: 'none' });
+        gsap.set('.fixed-logo-top', { autoAlpha: 1 });
+        return;
+    }
+
     const introTimeline = gsap.timeline({ paused: true });
 
     // Initial setup
@@ -346,6 +353,8 @@ function initNavigationControls() {
 // SMOOTH SCROLLING (LENIS)
 // ================================
 function initSmoothScrolling() {
+    if (window.innerWidth <= 767) return;
+
     const lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -405,6 +414,7 @@ function optimizePerformance() {
     const images = document.querySelectorAll('img');
     images.forEach(img => {
         img.loading = 'lazy';
+        img.decoding = 'async';
     });
 
     // Optimize GSAP animations
