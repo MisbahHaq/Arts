@@ -125,3 +125,98 @@
            margin: 60px auto 80px;
        }
    }
+
+   /* FOOTER */
+   .site-footer {
+       background: #fff;
+       padding: 60px 40px;
+       border-top: 1px solid #ddd;
+       font-family: "Inter", sans-serif;
+       color: #000;
+   }
+
+   .footer-content {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 40px;
+       max-width: 1200px;
+       margin: 0 auto;
+   }
+
+   .footer-left {
+       flex: 1 1 300px;
+   }
+
+   .footer-left h3 {
+       font-family: "Playfair Display", serif;
+       font-size: 24px;
+       margin-bottom: 20px;
+   }
+
+   .footer-left p {
+       font-size: 14px;
+       line-height: 1.6;
+       margin-bottom: 20px;
+   }
+
+   .footer-icons a {
+       margin-right: 15px;
+       text-decoration: none;
+       font-size: 18px;
+       color: #000;
+   }
+
+   .footer-right {
+       flex: 1 1 300px;
+   }
+
+   .footer-right form {
+       display: flex;
+       flex-direction: column;
+       gap: 15px;
+   }
+
+   .footer-right label {
+       font-size: 12px;
+       font-weight: 500;
+       display: flex;
+       flex-direction: column;
+   }
+
+   .footer-right input,
+   .footer-right textarea,
+   .footer-right select {
+       margin-top: 5px;
+       padding: 8px 10px;
+       font-size: 14px;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+       font-family: "Inter", sans-serif;
+   }
+
+   .footer-right textarea {
+       resize: vertical;
+       min-height: 80px;
+   }
+
+   .footer-right button {
+       padding: 10px 20px;
+       font-size: 14px;
+       border: 1px solid #000;
+       background: #fff;
+       cursor: pointer;
+       transition: all 0.3s;
+   }
+
+   .footer-right button:hover {
+       background: #000;
+       color: #fff;
+       border-color: #000;
+   }
+
+   /* RESPONSIVE */
+   @media (max-width: 900px) {
+       .footer-content {
+           flex-direction: column;
+       }
+   }
