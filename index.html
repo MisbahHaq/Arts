@@ -11,6 +11,9 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
   </head>
   <body>
     <!-- NAV -->
@@ -318,6 +321,14 @@
       function closeMenu() {
         document.getElementById("mobileMenu").classList.remove("active");
       }
+
+      // Lenis smooth scroll initialization
+      const lenis = new Lenis();
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
     </script>
   </body>
 </html>
