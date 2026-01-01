@@ -27,7 +27,24 @@
           <a href="#">✉</a>
         </div>
       </nav>
+
+      <!-- Hamburger -->
+      <div class="menu-btn" onclick="openMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </header>
+
+    <!-- Fullscreen Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="close-btn" onclick="closeMenu()">×</div>
+
+      <a href="#" onclick="closeMenu()">shop</a>
+      <a href="#" onclick="closeMenu()">work</a>
+      <a href="#" onclick="closeMenu()">about</a>
+      <a href="#" onclick="closeMenu()">play</a>
+    </div>
 
     <!-- HERO TEXT -->
     <section class="hero">
@@ -148,5 +165,15 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      function openMenu() {
+        document.getElementById("mobileMenu").classList.add("active");
+      }
+
+      function closeMenu() {
+        document.getElementById("mobileMenu").classList.remove("active");
+      }
+    </script>
   </body>
 </html>
