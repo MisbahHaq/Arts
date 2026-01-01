@@ -4,122 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Designer Landing</title>
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap"
       rel="stylesheet"
     />
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Inter", sans-serif;
-        background: #fff;
-        color: #000;
-      }
-
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      /* NAVBAR */
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 28px 40px;
-      }
-
-      .logo {
-        font-weight: 700;
-        font-size: 22px;
-        letter-spacing: -1px;
-      }
-
-      nav {
-        display: flex;
-        align-items: center;
-        gap: 28px;
-        font-size: 14px;
-      }
-
-      nav a {
-        position: relative;
-        padding-bottom: 3px;
-      }
-
-      nav a.active::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 1px;
-        background: black;
-      }
-
-      .icons {
-        display: flex;
-        gap: 14px;
-        margin-left: 10px;
-      }
-
-      /* HERO TEXT */
-      .hero {
-        max-width: 900px;
-        margin: 90px auto 120px;
-        text-align: center;
-        padding: 0 20px;
-      }
-
-      .hero p {
-        font-family: "Playfair Display", serif;
-        font-size: clamp(26px, 3.5vw, 42px);
-        line-height: 1.35;
-        font-weight: 400;
-      }
-
-      /* IMAGE GRID */
-      .gallery {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        padding: 0 40px 80px;
-      }
-
-      .gallery img {
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: cover;
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 900px) {
-        .gallery {
-          grid-template-columns: 1fr;
-        }
-
-        header {
-          padding: 20px;
-        }
-
-        nav {
-          display: none;
-        }
-
-        .hero {
-          margin: 60px auto 80px;
-        }
-      }
-    </style>
   </head>
   <body>
     <!-- NAV -->
@@ -149,14 +40,15 @@
 
     <!-- IMAGE GRID -->
     <section class="gallery">
-      <img
-        src="https://images.unsplash.com/photo-1604908554265-2c0f0140f7c3?q=80&w=1200&auto=format&fit=crop"
-        alt="Food product"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=1200&auto=format&fit=crop"
-        alt="Product bottle"
-      />
+      <div class="image-box">
+        <img src="./assets/1.png" alt="Image 1" />
+        <div class="image-title">Title 1</div>
+      </div>
+
+      <div class="image-box">
+        <img src="./assets/2.png" alt="Image 2" />
+        <div class="image-title">Title 2</div>
+      </div>
     </section>
   </body>
 </html>
