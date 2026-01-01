@@ -111,7 +111,7 @@
    .fade-in {
        opacity: 0;
        transform: translateY(30px);
-       transition: all 1.5s ease-out;
+       transition: all 0.8s ease-out;
    }
 
    .fade-in.visible {
