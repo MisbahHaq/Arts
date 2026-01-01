@@ -86,6 +86,22 @@
       cursor: pointer;
   }
 
+  h1 {
+      text-align: center;
+      margin: 120px 80px;
+  }
+
+  .photos {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+  }
+
+  .photos img {
+      width: 830px;
+      height: 600px;
+  }
+
   /* Responsive */
   @media (max-width: 768px) {
       .nav-links {
