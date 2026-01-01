@@ -3,20 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fullscreen Navbar</title>
+    <title>Katrina Romulo - Portfolio</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav>
-      <div class="logo">MyLogo</div>
+      <div class="logo">
+        <img src="assets/1.png" alt="Logo" />
+      </div>
 
       <!-- Desktop links -->
       <div class="nav-links">
-        <a href="#">Shop</a>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Insta logo</a>
-        <a href="#">email logo</a>
+        <a href="#">shop</a>
+        <a href="#" class="active">work</a>
+        <a href="#">about</a>
+        <a href="#">play</a>
+        <div class="social">
+          <a href="#">IG</a>
+          <a href="#">email</a>
+        </div>
       </div>
 
       <!-- Hamburger -->
@@ -31,23 +36,27 @@
     <div class="mobile-menu" id="mobileMenu">
       <div class="close-btn" onclick="closeMenu()">×</div>
 
-      <a href="#" onclick="closeMenu()">Home</a>
-      <a href="#" onclick="closeMenu()">Shop</a>
-      <a href="#" onclick="closeMenu()">About</a>
-      <a href="#" onclick="closeMenu()">Contact</a>
+      <a href="#" onclick="closeMenu()">shop</a>
+      <a href="#" onclick="closeMenu()">work</a>
+      <a href="#" onclick="closeMenu()">about</a>
+      <a href="#" onclick="closeMenu()">play</a>
     </div>
 
-    <h1>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, odio.
-      Voluptas itaque inventore dolorum, deleniti cum molestiae velit debitis
-      dicta quos, quidem voluptatibus beatae animi enim reprehenderit repellat
-      molestias nemo culpa consectetur aliquid sit saepe?
-    </h1>
+    <section class="hero">
+      <p>
+        Katrina Romulo is a multidisciplinary designer. She loves roasted
+        vegetables, the Bay Area, and book covers. She currently
+        <span class="underline">works</span> and lives in Los Angeles,
+        California.
+      </p>
+    </section>
 
-    <div class="photos">
-      <img src="assets/1.png" alt="Photo 1" />
-      <img src="assets/2.png" alt="Photo 2" />
-    </div>
+    <section class="gallery">
+      <div class="image-grid">
+        <img src="assets/2.png" alt="Food photography" />
+        <img src="assets/3.png" alt="Product shot" />
+      </div>
+    </section>
 
     <script>
       function openMenu() {
