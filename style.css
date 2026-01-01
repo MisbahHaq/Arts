@@ -107,6 +107,18 @@
        /* bottom-left style */
    }
 
+   /* Fade-in animation for images */
+   .fade-in {
+       opacity: 0;
+       transform: translateY(30px);
+       transition: all 1.5s ease-out;
+   }
+
+   .fade-in.visible {
+       opacity: 1;
+       transform: translateY(0);
+   }
+
    /* RESPONSIVE */
    @media (max-width: 900px) {
        .gallery {
