@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Designer Landing</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+  </head>
+  <body>
+    <!-- NAV -->
+    <header>
+      <div class="logo">KR</div>
+
+      <nav>
+        <a href="#">shop</a>
+        <a href="index.html" class="active">work</a>
+        <a href="about.html">about</a>
+        <div class="icons">
+          <a href="#">◎</a>
+          <a href="#">✉</a>
+        </div>
+      </nav>
+
+      <!-- Hamburger -->
+      <div class="menu-btn" onclick="openMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+    <!-- Fullscreen Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="close-btn" onclick="closeMenu()">×</div>
+
+      <a href="#" onclick="closeMenu()">shop</a>
+      <a href="#" onclick="closeMenu()">work</a>
+      <a href="#" onclick="closeMenu()">about</a>
+      <a href="#" onclick="closeMenu()">play</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-left">
+          <h3>Let's Talk.</h3>
+          <p>
+            If you're interested in working together, please fill out this super
+            quick form and tell me about your project scope/deliverables,
+            timeline, and budget! The more detailed the better.
+          </p>
+          <p>
+            I specialize in branding D2C companies primarily for Gen
+            Z/Millennials, but am also open to other projects such as merch
+            design, book cover design, editorial posters, and more! If you just
+            want to say hi, that's totally welcome too.
+          </p>
+          <p>
+            I do my best to get back to everyone but due to volume of inquiries
+            I prioritize responding to projects that I feel are a good fit!
+          </p>
+          <div class="footer-icons">
+            <a href="#">◎</a>
+            <a href="#">✉</a>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <form>
+            <label>
+              Your Cool Name (required)
+              <input type="text" placeholder="First Name" required />
+            </label>
+
+            <label>
+              Last Name
+              <input type="text" placeholder="Last Name" required />
+            </label>
+
+            <label>
+              Your Lovely Email (required)
+              <input type="email" placeholder="Email" required />
+            </label>
+
+            <label>
+              Your Exciting Business or Project (required)
+              <textarea
+                placeholder="Please tell me as much as you can! What do you do? What space are you in? Why does this excite you? Feel free to add links to your website and social media!"
+                required
+              ></textarea>
+            </label>
+
+            <label>
+              Exciting Services You're Interested In (required)
+              <select required>
+                <option value="">Select an option</option>
+                <option value="brand-identity">Brand Identity Design</option>
+                <option value="packaging-print">
+                  Packaging / Print Design
+                </option>
+                <option value="web-design">Web Design</option>
+                <option value="social-media">Social Media</option>
+                <option value="other">Other / I'm not sure yet!</option>
+              </select>
+            </label>
+
+            <label>
+              Your Cool Budget (required)
+              <input
+                type="text"
+                placeholder="Please do not lie! Basic brand identities start at a minimum of $8k"
+                required
+              />
+            </label>
+
+            <label>
+              Your Preferred Start Date / Timeline (required)
+              <input type="text" placeholder="Select an option" required />
+            </label>
+
+            <label>
+              Why Do You Want to Work Together? (required)
+              <textarea
+                placeholder="Just wondering! Genuinely."
+                required
+              ></textarea>
+            </label>
+
+            <label>
+              How Did You Find Me? (required)
+              <input type="text" placeholder="Select an option" required />
+            </label>
+
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function openMenu() {
+        document.getElementById("mobileMenu").classList.add("active");
+      }
+
+      function closeMenu() {
+        document.getElementById("mobileMenu").classList.remove("active");
+      }
+
+      // Lenis smooth scroll initialization
+      // const lenis = new Lenis();
+      // function raf(time) {
+      //   lenis.raf(time);
+      //   requestAnimationFrame(raf);
+      // }
+      // requestAnimationFrame(raf);
+
+      // Fade-in animation on scroll
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
