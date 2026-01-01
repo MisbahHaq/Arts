@@ -3,21 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Misbah Haque</title>
+    <title>Fullscreen Navbar</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav>
-      <div class="left"></div>
-      <div class="right">
-        <ul>
-          <li>shop</li>
-          <li>shop</li>
-          <li>shop</li>
-          <li>shop</li>
-          <li>shop</li>
-        </ul>
+      <div class="logo">MyLogo</div>
+
+      <!-- Desktop links -->
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <!-- Hamburger -->
+      <div class="menu-btn" onclick="openMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </nav>
+
+    <!-- Fullscreen Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="close-btn" onclick="closeMenu()">×</div>
+
+      <a href="#" onclick="closeMenu()">Home</a>
+      <a href="#" onclick="closeMenu()">Shop</a>
+      <a href="#" onclick="closeMenu()">About</a>
+      <a href="#" onclick="closeMenu()">Contact</a>
+    </div>
+
+    <script>
+      function openMenu() {
+        document.getElementById("mobileMenu").classList.add("active");
+      }
+
+      function closeMenu() {
+        document.getElementById("mobileMenu").classList.remove("active");
+      }
+    </script>
   </body>
 </html>
