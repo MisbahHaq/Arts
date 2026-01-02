@@ -99,7 +99,7 @@ nav a.active::after {
 }
 
 .image-title {
-  font-family: "Playfair Display", serif;
+  font-family: Arial, Helvetica, sans-serif "Playfair Display", serif;
   font-weight: 500;
   font-size: 20px;
   color: #000;
