@@ -283,3 +283,11 @@
            display: flex;
        }
    }
+
+
+   .logo img {
+       height: 58px;
+       width: auto;
+       display: block;
+       background: none;
+   }
