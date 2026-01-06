@@ -108,11 +108,16 @@ nav a.active::after {
 }
 
 .about-image {
-  display: block; /* Makes the image a block element */
-  margin-left: auto; /* Centers the image horizontally */
-  margin-right: auto; /* Centers the image horizontally */
-  max-width: 100%; /* Ensures the image doesn't overflow the container */
-  height: auto; /* Keeps the aspect ratio of the image */
+  display: block;
+  /* Makes the image a block element */
+  margin-left: auto;
+  /* Centers the image horizontally */
+  margin-right: auto;
+  /* Centers the image horizontally */
+  max-width: 100%;
+  /* Ensures the image doesn't overflow the container */
+  height: auto;
+  /* Keeps the aspect ratio of the image */
 }
 
 /* Fade-in animation for images */
@@ -147,14 +152,21 @@ nav a.active::after {
 }
 
 p {
-    font-family: "Inter", sans-serif;
-    font-size: 18px;                /* Sets the font size */
-    line-height: 1.8;               /* Adjusts the line spacing for readability */
-    max-width: 800px;               /* Limits the paragraph width to improve readability */
-    margin: 20px auto;              /* Centers the paragraph and adds vertical space */
-    padding: 0 20px;                /* Adds padding on the sides for breathing room */
-    color: #333;                    /* Sets a dark color for better contrast */
-    text-align: justify;            /* Justifies text for a cleaner look */
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  /* Sets the font size */
+  line-height: 1.8;
+  /* Adjusts the line spacing for readability */
+  max-width: 800px;
+  /* Limits the paragraph width to improve readability */
+  margin: 20px auto;
+  /* Centers the paragraph and adds vertical space */
+  padding: 0 20px;
+  /* Adds padding on the sides for breathing room */
+  color: #333;
+  /* Sets a dark color for better contrast */
+  text-align: justify;
+  /* Justifies text for a cleaner look */
 }
 
 
@@ -309,4 +321,107 @@ p {
   width: auto;
   display: block;
   background: none;
+}
+
+/* PRODUCT HERO */
+.product-hero {
+  max-width: 1495px;
+  margin: 90px auto 120px;
+  padding: 0 20px;
+}
+
+.image-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.image-wrap img {
+  width: 100%;
+  height: 75vh;
+  /* BIGGER image */
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay info */
+.prod-info {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  inset: 0;
+  padding: 30px 40px;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  color: #fff;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0));
+}
+
+.prod-info .left {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  max-width: 420px;
+  color: #fff;
+  text-align: left;
+}
+
+/* H3 tight to the corner */
+.prod-info h3 {
+  align-items: start;
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  margin: 0;
+}
+
+/* Paragraph slightly below & softer */
+.prod-info p {
+  margin: 10px 0 0 0;
+  /* remove auto centering */
+  padding: 0;
+  /* remove inherited padding */
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.prod-info .right {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  color: #fff;
+}
+
+.prod-info .right ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .prod-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .prod-info .left,
+  .prod-info .right {
+    max-width: 100%;
+  }
+
+  .prod-info .right ul {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
 }
