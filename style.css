@@ -224,7 +224,7 @@ nav a.active::after {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: fill;
   display: block;
   background: #f2f2f2;
   border-radius: 2px;
