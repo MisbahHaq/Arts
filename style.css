@@ -325,6 +325,7 @@ p {
 
 /* PRODUCT HERO */
 .product-hero {
+  position: relative;
   max-width: 1495px;
   margin: 90px auto 120px;
   padding: 0 20px;
@@ -357,9 +358,7 @@ p {
   align-items: flex-end;
 
   color: #fff;
-  background: linear-gradient(to top,
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0));
+
 }
 
 .prod-info .left {
@@ -386,6 +385,7 @@ p {
   padding: 0;
   /* remove inherited padding */
   text-align: left;
+  color: #fff;
   font-size: 16px;
   line-height: 1.5;
   opacity: 0.85;
@@ -410,18 +410,110 @@ p {
 }
 
 @media (max-width: 768px) {
+  .product-hero {
+    padding: 0;
+  }
+
   .prod-info {
+    position: static;
     flex-direction: column;
     gap: 20px;
+    padding: 20px;
+    align-items: flex-start;
+    background: none;
+    color: #000;
   }
 
   .prod-info .left,
   .prod-info .right {
     max-width: 100%;
+    position: static;
+  }
+
+  .prod-info .left {
+    margin-bottom: 10px;
+  }
+
+  .prod-info .right {
+    align-self: flex-start;
+  }
+
+  .prod-info h3 {
+    font-size: 24px;
+    color: #000;
+  }
+
+  .prod-info p {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
   }
 
   .prod-info .right ul {
     flex-wrap: wrap;
     gap: 12px;
+    font-size: 12px;
+    color: #000;
+  }
+}
+
+/* Image column section */
+.image-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1495px;
+  margin: 40px auto 120px;
+  padding: 0 20px;
+}
+
+.image-column .image-box {
+  width: 100%;
+  max-width: 100%;
+}
+
+.image-column .image-box img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  background: #f2f2f2;
+  border-radius: 2px;
+}
+
+/* Gallery - Adjusting grid layout for smaller screens */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Image styling for smaller devices */
+  .image-box img {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Adjust hero section image */
+  .hero img,
+  .product-hero .image-wrap img {
+    height: 50vh;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .image-column .image-box img {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* Responsive for very small screens */
+@media (max-width: 600px) {
+  .product-hero .image-wrap img {
+    height: 45vh;
+  }
+
+  .image-column .image-box img {
+    aspect-ratio: 4 / 3;
   }
 }
