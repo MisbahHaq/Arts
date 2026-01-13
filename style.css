@@ -56,7 +56,7 @@ header {
 }
 
 .logo img {
-  height: 45px;
+  height: 60px;
   width: auto;
   display: block;
 }
@@ -396,7 +396,7 @@ nav a:not(.active):hover::after {
   }
 
   .logo img {
-    height: 38px;
+    height: 50px;
   }
 
   .hero {

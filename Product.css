@@ -56,7 +56,7 @@ header {
 }
 
 .logo img {
-    height: 45px;
+    height: 60px;
     width: auto;
     display: block;
 }
@@ -206,6 +206,22 @@ nav a:not(.active):hover::after {
 }
 
 .image-full img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== IMAGE GRID ===== */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1600px;
+    margin: 0 auto 100px;
+    padding: 0 50px;
+}
+
+.grid-item img {
     width: 100%;
     height: auto;
     display: block;
@@ -424,6 +440,11 @@ nav a:not(.active):hover::after {
     .footer-content {
         gap: 50px;
     }
+
+    .image-grid {
+        padding: 0 40px;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 900px) {
@@ -470,6 +491,13 @@ nav a:not(.active):hover::after {
         gap: 20px;
     }
 
+    .image-grid {
+        padding: 0 30px;
+        gap: 15px;
+        margin-bottom: 60px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .next-project {
         padding: 0 30px;
     }
@@ -491,7 +519,7 @@ nav a:not(.active):hover::after {
     }
 
     .logo img {
-        height: 38px;
+        height: 50px;
     }
 
     .hero {
@@ -532,6 +560,13 @@ nav a:not(.active):hover::after {
         padding: 0 20px;
         gap: 15px;
         margin-bottom: 60px;
+    }
+
+    .image-grid {
+        padding: 0 20px;
+        gap: 10px;
+        margin-bottom: 50px;
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .next-project {
