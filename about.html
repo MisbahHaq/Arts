@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me</title>
+    <title>About Me | Arts Portfolio</title>
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (consistent with other pages) -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
@@ -28,12 +28,12 @@
       ></a>
 
       <nav>
-        <a href="#">shop</a>
-        <a href="index.html">work</a>
+        <a href="./product.html">shop</a>
+        <a href="./index.html">work</a>
         <a href="about.html" class="active">about</a>
         <div class="icons">
-          <a href="#">◎</a>
-          <a href="#">✉</a>
+          <a href="mailto:mmisbahhaq@gmail.com">✉</a>
+          <a href="https://www.instagram.com/lifeislavendermilk" target="_blank" rel="noopener noreferrer">📷</a>
         </div>
       </nav>
 
@@ -49,23 +49,133 @@
     <div class="mobile-menu" id="mobileMenu">
       <div class="close-btn" onclick="closeMenu()">×</div>
 
-      <a href="#" onclick="closeMenu()">shop</a>
+      <a href="./product.html" onclick="closeMenu()">shop</a>
       <a href="./index.html" onclick="closeMenu()">work</a>
       <a href="./about.html" onclick="closeMenu()">about</a>
+      <a href="mailto:mmisbahhaq@gmail.com" onclick="closeMenu()">✉ email</a>
+      <a href="https://www.instagram.com/lifeislavendermilk" target="_blank" rel="noopener noreferrer" onclick="closeMenu()">📷 instagram</a>
     </div>
 
-    <img src="./Assets/about.png" alt="" class="about-image" />
+    <!-- About Hero -->
+    <section class="about-hero">
+      <div class="about-hero-content fade-in">
+        <h1>Hello, I'm Arts</h1>
+        <p class="about-tagline">Visual Designer & Creative Director</p>
+        <p class="about-intro">
+          I create meaningful visual experiences that bridge the gap between 
+          art and communication. With a passion for typography, color, and 
+          composition, I craft designs that tell stories and connect with audiences.
+        </p>
+      </div>
+      <img src="./Assets/about.png" alt="Arts - Visual Designer" class="about-hero-image" />
+    </section>
 
-    <p>
-      I've always been drawn towards Art because it allows me to turn ideas into
-      visual stories. I enjoy experimenting with color, typography and
-      composition to express emotions and concepts that words alone can't fully
-      capture. For me, design is not just about aesthetics, but about
-      communication and meaning.
-    </p>
+    <!-- Story Section -->
+    <section class="about-story">
+      <div class="story-grid fade-in">
+        <div class="story-text">
+          <h2>My Journey</h2>
+          <p>
+            I've always been drawn towards Art because it allows me to turn ideas into 
+            visual stories. I enjoy experimenting with color, typography and composition 
+            to express emotions and concepts that words alone can't fully capture.
+          </p>
+          <p>
+            For me, design is not just about aesthetics, but about communication and meaning. 
+            Every project is an opportunity to solve problems creatively and leave a lasting 
+            impression through thoughtful visual storytelling.
+          </p>
+          <p>
+            Based in Pakistan, I work with clients worldwide, bringing diverse perspectives 
+            and cultural influences into my design approach. I specialize in branding for 
+            D2C companies targeting Gen Z and Millennials, but I'm always excited to take 
+            on new creative challenges.
+          </p>
+        </div>
+        <div class="story-stats">
+          <div class="stat-item">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">30+</span>
+            <span class="stat-label">Happy Clients</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section">
+      <h2 class="fade-in">Design Philosophy</h2>
+      <div class="philosophy-grid">
+        <div class="philosophy-card fade-in">
+          <h3>Purposeful Design</h3>
+          <p>Every element has a role. I believe in intentional design that serves both aesthetic and functional purposes, creating work that looks beautiful while achieving its goals.</p>
+        </div>
+        <div class="philosophy-card fade-in">
+          <h3>Storytelling First</h3>
+          <p>Great design tells a story. I focus on understanding the narrative behind each brand to create visuals that resonate with audiences on an emotional level.</p>
+        </div>
+        <div class="philosophy-card fade-in">
+          <h3>Continuous Evolution</h3>
+          <p>Design is ever-changing. I stay curious and embrace new trends, tools, and techniques to deliver fresh and relevant solutions for every project.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+      <h2 class="fade-in">What I Do</h2>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-icon">🎨</div>
+          <h3>Brand Identity</h3>
+          <p>Logo design, brand guidelines, visual systems, and complete brand overhauls that make lasting impressions.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">📦</div>
+          <h3>Packaging Design</h3>
+          <p>Eye-catching packaging solutions for products that stand out on shelves and connect with consumers.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">💻</div>
+          <h3>Web Design</h3>
+          <p>Modern, responsive website designs that provide exceptional user experiences across all devices.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">📰</div>
+          <h3>Editorial & Print</h3>
+          <p>Magazine layouts, book covers, posters, and print materials that communicate with precision and style.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section class="interests-section">
+      <div class="interests-content fade-in">
+        <h2>Beyond Design</h2>
+        <p>
+          When I'm not designing, you'll find me exploring art galleries, experimenting with new creative techniques, 
+          or diving into design history. I'm passionate about coffee, music, and finding inspiration in everyday moments. 
+          I believe that being curious about the world around us makes us better designers and storytellers.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="about-cta fade-in">
+      <h2>Let's Create Something Amazing</h2>
+      <p>Have a project in mind? I'd love to hear about it. Let's work together to bring your vision to life.</p>
+      <a href="#contact" class="cta-button">Get In Touch</a>
+    </section>
 
     <!-- FOOTER -->
-    <footer class="site-footer">
+    <footer class="site-footer" id="contact">
       <div class="footer-content">
         <div class="footer-left">
           <h3>Let's Talk.</h3>
@@ -85,8 +195,8 @@
             I prioritize responding to projects that I feel are a good fit!
           </p>
           <div class="footer-icons">
-            <a href="#">◎</a>
-            <a href="#">✉</a>
+            <a href="mailto:mmisbahhaq@gmail.com">✉</a>
+            <a href="https://www.instagram.com/lifeislavendermilk" target="_blank" rel="noopener noreferrer">📷</a>
           </div>
         </div>
 
