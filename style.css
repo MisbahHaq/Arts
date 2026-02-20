@@ -765,7 +765,7 @@ nav a:not(.active):hover::after {
   .philosophy-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -778,46 +778,46 @@ nav a:not(.active):hover::after {
     padding: 0 30px;
     margin-top: 120px;
   }
-  
+
   .about-hero-content {
     text-align: center;
   }
-  
+
   .about-intro {
     max-width: 100%;
   }
-  
+
   .about-hero-image {
     height: 50vh;
   }
-  
+
   .story-grid {
     grid-template-columns: 1fr;
     gap: 50px;
   }
-  
+
   .story-stats {
     flex-direction: row;
     justify-content: space-around;
     padding: 30px;
   }
-  
+
   .about-story {
     padding: 0 30px;
   }
-  
+
   .philosophy-section {
     padding: 80px 30px;
   }
-  
+
   .services-section {
     padding: 0 30px;
   }
-  
+
   .interests-section {
     padding: 80px 30px;
   }
-  
+
   .about-cta {
     padding: 80px 30px;
   }
@@ -829,46 +829,46 @@ nav a:not(.active):hover::after {
     margin-top: 100px;
     margin-bottom: 60px;
   }
-  
+
   .about-hero-content h1 {
     font-size: 36px;
   }
-  
+
   .about-hero-image {
     height: 40vh;
   }
-  
+
   .story-stats {
     flex-direction: column;
     gap: 30px;
   }
-  
+
   .stat-number {
     font-size: 48px;
   }
-  
+
   .philosophy-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .philosophy-card {
     padding: 30px 25px;
   }
-  
+
   .services-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .service-card {
     padding: 30px 20px;
   }
-  
+
   .interests-content h2 {
     font-size: 32px;
   }
-  
+
   .about-cta h2 {
     font-size: 32px;
   }
