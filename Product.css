@@ -163,16 +163,23 @@ nav a:not(.active):hover::after {
     }
 
     .hero-image {
-        height: 70vh;
+        height: 60vh;
+    }
+
+    .hero-image img {
+        object-fit: cover;
     }
 
     .hero-overlay {
+        position: absolute;
         bottom: 40px;
         left: 30px;
+        z-index: 10;
     }
 
     .hero-overlay h1 {
         font-size: clamp(40px, 10vw, 80px);
+        color: #fff;
     }
 }
 
@@ -182,16 +189,23 @@ nav a:not(.active):hover::after {
     }
 
     .hero-image {
-        height: 60vh;
+        height: 50vh;
+    }
+
+    .hero-image img {
+        object-fit: cover;
     }
 
     .hero-overlay {
+        position: absolute;
         bottom: 30px;
         left: 20px;
+        z-index: 10;
     }
 
     .hero-overlay h1 {
         font-size: clamp(30px, 12vw, 60px);
+        color: #fff;
     }
 }
 
