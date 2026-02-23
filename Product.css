@@ -156,6 +156,45 @@ nav a:not(.active):hover::after {
     line-height: 0.9;
 }
 
+/* Responsive Hero Image */
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 80px;
+    }
+
+    .hero-image {
+        height: 70vh;
+    }
+
+    .hero-overlay {
+        bottom: 40px;
+        left: 30px;
+    }
+
+    .hero-overlay h1 {
+        font-size: clamp(40px, 10vw, 80px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        margin-top: 70px;
+    }
+
+    .hero-image {
+        height: 60vh;
+    }
+
+    .hero-overlay {
+        bottom: 30px;
+        left: 20px;
+    }
+
+    .hero-overlay h1 {
+        font-size: clamp(30px, 12vw, 60px);
+    }
+}
+
 /* ===== PROJECT INFO ===== */
 .project-info {
     display: grid;
@@ -215,13 +254,15 @@ nav a:not(.active):hover::after {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    max-width: 100%;
+    max-width: 1400px;
     margin: 0 auto 100px;
     padding: 0 50px;
 }
 
 .image-full {
     width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .image-full img {
