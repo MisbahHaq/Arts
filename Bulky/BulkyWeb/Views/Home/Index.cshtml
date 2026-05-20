@@ -2,7 +2,119 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- FIRST SECTION -->
+<div id="hero" class="relative w-full h-screen">
+
+    <img src="/assets/first-pic.png" alt="Main" class="absolute inset-0 w-full h-full object-cover -z-10" />
+
+    <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-center text-white">
+
+        <h3 class="uppercase text-xl tracking-widest mb-2 text-black">
+            Now Live
+        </h3>
+
+        <h2 class="text-4xl font-bold uppercase mb-6 text-black">
+            High Summer
+        </h2>
+
+        <div class="flex flex-nowrap gap-4 justify-center flex-row">
+
+            <a href="/shop">
+                <button
+                    class="uppercase whitespace-nowrap border border-black text-black px-3 sm:px-4 md:px-6 py-2 sm:py-2 md:py-3 text-xs sm:text-sm md:text-base hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
+                    Shop Now
+                </button>
+            </a>
+
+            <a href="/look">
+                <button
+                    class="uppercase whitespace-nowrap border border-black text-black px-3 sm:px-4 md:px-6 py-2 sm:py-2 md:py-3 text-xs sm:text-sm md:text-base hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
+                    View LookBook
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SECOND SECTION -->
+<div class="relative inset-0 z-10">
+
+    <img src="/assets/second-pic-main.png" alt="Main" class="w-full h-screen object-cover" />
+
+    <div
+        class="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 text-center text-white z-10 px-4 max-w-4xl">
+
+        <h3 class="uppercase text-sm sm:text-lg md:text-xl lg:text-2xl tracking-widest mb-2">
+            Now Live
+        </h3>
+
+        <h2
+            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase mb-4 md:mb-6 leading-tight">
+            247 Rivington Capsule
+        </h2>
+
+        <h3 class="text-sm sm:text-lg md:text-xl lg:text-2xl uppercase tracking-widest mb-4 md:mb-6">
+            On a mission.
+        </h3>
+
+        <div class="flex gap-4 md:gap-6 justify-center">
+
+            <a href="/shop">
+                <button
+                    class="uppercase border border-white px-4 py-2 md:px-6 md:py-3 text-sm md:text-base hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
+                    Shop Now
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- THIRD VIDEO -->
+<div id="third-video" class="relative w-full h-screen overflow-hidden">
+
+    <video autoplay loop muted playsinline
+           class="absolute inset-0 w-full h-full object-cover -z-10 min-w-full min-h-full">
+
+        <source src="/assets/third-video-main.webm" type="video/webm">
+
+    </video>
+
+</div>
+
+<!-- FOURTH VIDEO -->
+<div id="fourth-video" class="relative w-full h-screen overflow-hidden">
+
+    <video autoplay loop muted playsinline
+           class="absolute inset-0 w-full h-full object-cover -z-10 min-w-full min-h-full">
+
+        <source src="/assets/fourth-video-main.webm" type="video/webm">
+
+    </video>
+
+</div>
+
+<!-- FIFTH IMAGE -->
+<div id="fifth-image" class="relative w-full h-screen overflow-hidden">
+
+    <img src="/assets/fifth-pic-main.png" alt="Main"
+         class="absolute inset-0 w-full h-full object-cover min-w-full min-h-full" />
+
+</div>
+
+<!-- SIXTH VIDEO -->
+<div id="sixth-video" class="relative w-full h-screen overflow-hidden">
+
+    <video autoplay loop muted playsinline
+           class="absolute inset-0 w-full h-full object-cover -z-10 min-w-full min-h-full">
+
+        <source src="/assets/sixth-video-main.webm" type="video/webm">
+
+    </video>
+
 </div>
