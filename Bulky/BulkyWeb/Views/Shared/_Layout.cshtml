@@ -14,64 +14,35 @@
 <body class="bg-white overflow-x-hidden">
 
     <!-- ================= NAVBAR ================= -->
-    <nav id="navbar"
-         class="fixed top-0 left-0 w-full h-20 z-[60] transition-all duration-300 bg-transparent text-white">
+    <style>
+        .nb-inner {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 80px;
+            padding: 0 24px;
+        }
+        .nb-left  { flex: 1; display: flex; align-items: center; gap: 20px; }
+        .nb-center { flex: 0 0 auto; font-weight: 700; letter-spacing: 6px; font-size: 18px; }
+        .nb-right { flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 20px; }
+    </style>
 
-        <div class="h-full flex items-center justify-between px-6 lg:px-10">
+    <nav class="fixed top-0 left-0 w-full h-20 z-[60] transition-all duration-300 bg-transparent text-black">
 
-            <!-- LEFT -->
-            <div class="hidden lg:flex items-center gap-10 text-xs uppercase tracking-widest">
+        <div class="nb-inner">
 
-                <!-- MAN -->
-                <div class="relative group">
-                    <button class="hover:opacity-70">Man</button>
-
-                    <div class="opacity-0 invisible group-hover:opacity-100 group-hover:visible transition
-                        absolute top-14 left-0 flex bg-white text-black w-[720px] h-[480px] shadow-2xl z-50">
-
-                        <div class="w-1/2 p-10 text-sm">
-                            <ul class="space-y-4">
-                                <li><a href="/new">New Arrivals</a></li>
-                                <li><a href="/summer">Summer '25</a></li>
-                                <li><a href="/owners">Owner's Club</a></li>
-                                <li><a href="/shop">Shop</a></li>
-                                <li><a href="/look">Lookbooks</a></li>
-                            </ul>
-                        </div>
-
-                        <img src="/assets/guy.webp" class="w-1/2 object-cover" />
-                    </div>
-                </div>
-
-                <!-- WOMAN -->
-                <div class="relative group">
-                    <button class="hover:opacity-70">Woman</button>
-
-                    <div class="opacity-0 invisible group-hover:opacity-100 group-hover:visible transition
-                        absolute top-14 left-0 flex bg-white text-black w-[720px] h-[480px] shadow-2xl z-50">
-
-                        <div class="w-1/2 p-10 text-sm">
-                            <ul class="space-y-4">
-                                <li><a href="/womannewarrivals">New Arrivals</a></li>
-                                <li><a href="/womansummer">Summer '25</a></li>
-                                <li><a href="/womanshop">Shop</a></li>
-                                <li><a href="/womanaccessories">Accessories</a></li>
-                            </ul>
-                        </div>
-
-                        <img src="/assets/girl.webp" class="w-1/2 object-cover" />
-                    </div>
-                </div>
-
+            <!-- LEFT (links) -->
+            <div class="nb-left">
+                @* <a href="/shop" class="hover:opacity-70">Shop</a> *@
             </div>
 
-            <!-- LOGO -->
-            <div class="absolute left-1/2 -translate-x-1/2 font-bold tracking-[6px] text-lg">
+            <!-- CENTER LOGO -->
+            <div class="nb-center">
                 REPRESENT
             </div>
 
-            <!-- RIGHT -->
-            <div class="flex items-center gap-5 text-xs uppercase tracking-widest">
+            <!-- RIGHT (icons) -->
+            <div class="nb-right">
 
                 <a href="/retail" class="hidden xl:block hover:opacity-70">Retail</a>
                 <a href="/vault" class="hidden xl:block hover:opacity-70">Vault</a>
@@ -82,23 +53,20 @@
                 <i class="fa-regular fa-user cursor-pointer"></i>
                 <i class="fa-solid fa-bag-shopping cursor-pointer"></i>
 
-                <!-- MOBILE BUTTON -->
                 <button id="mobileMenuBtn" class="lg:hidden text-xl ml-2">
                     <i class="fa-solid fa-bars"></i>
                 </button>
-
             </div>
-
         </div>
     </nav>
 
     <!-- ================= MOBILE MENU ================= -->
-    <div id="mobileMenu" class="fixed top-0 left-0 w-[300px] h-screen bg-white text-black z-[100]
-        -translate-x-full transition-transform duration-300 shadow-2xl">
+    @* <div id="mobileMenu" class="fixed top-0 left-0 w-[300px] h-screen bg-white text-black z-[100]
+        transform -translate-x-full transition-transform duration-300 shadow-2xl">
 
-        <div class="p-6">
+        <div class="p-6 flex flex-col h-full">
 
-            <button id="closeMenu" class="text-2xl mb-8">
+            <button id="closeMenu" class="text-2xl mb-8 self-end">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
@@ -111,9 +79,9 @@
             </ul>
 
         </div>
-    </div>
+    </div> *@
 
-    <!-- ================= MAIN PAGE CONTENT ================= -->
+    <!-- ================= MAIN ================= -->
     <main class="pt-20">
         @RenderBody()
     </main>
@@ -125,31 +93,18 @@
 
     <!-- ================= SCRIPT ================= -->
     <script>
-            const navbar = document.getElementById("navbar");
-
-            window.addEventListener("scroll", () => {
-                if (window.scrollY > 80) {
-                    navbar.classList.add("bg-white", "text-black", "shadow-lg");
-                    navbar.classList.remove("bg-transparent", "text-white");
-                } else {
-                    navbar.classList.remove("bg-white", "text-black", "shadow-lg");
-                    navbar.classList.add("bg-transparent", "text-white");
-                }
-            });
-
             const mobileMenu = document.getElementById("mobileMenu");
             const openBtn = document.getElementById("mobileMenuBtn");
             const closeBtn = document.getElementById("closeMenu");
 
             openBtn.addEventListener("click", () => {
-                mobileMenu.classList.remove("-translate-x-full");
+                mobileMenu.style.transform = "translateX(0)";
             });
 
             closeBtn.addEventListener("click", () => {
-                mobileMenu.classList.add("-translate-x-full");
+                mobileMenu.style.transform = "translateX(-100%)";
             });
     </script>
-
 </body>
 
 </html>
