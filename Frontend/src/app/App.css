@@ -1,1 +1,14 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+@theme {
+  --color-royal-blue: #0B2545;
+  --color-imperial-gold: #D4AF37;
+  --color-ivory: #F9F8F6;
+  --color-obsidian: #111111;
+  --color-obsidian-light: #1a1a1a;
+  --color-obsidian-lighter: #222222;
+  --color-obsidian-border: #333333;
+
+  --font-serif: 'Cinzel', serif;
+  --font-sans: 'Inter', sans-serif;
+}
